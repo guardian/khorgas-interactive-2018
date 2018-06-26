@@ -1,58 +1,134 @@
-.share-wrapper {
-  margin-left: 8px;
-  padding-top: 8px;
+.gv-meta-container {
+    position: relative;
+    background-image: -webkit-repeating-linear-gradient(top, $neutral-86, $neutral-86 0.0625rem, transparent 0.0625rem, transparent 0.25rem);
+    background-image: repeating-linear-gradient(to bottom, $neutral-86, $neutral-86 0.0625rem, transparent 0.0625rem, transparent 0.25rem);
+    background-repeat: repeat-x;
+    background-position: top;
+    -webkit-background-size: 1px 13px;
+    background-size: 1px 13px;
+    padding: 16px 0 32px 0;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
 
-  @include mq(mobileLandscape) {
-    margin-left: 16px;
-  }
+    @include mq(tablet) {
+      margin-top: 0px;
+      margin-left: 0px;
+    }
 
-  @include mq(desktop) {
-      border-top: none;
-      border-bottom: none;
-      position: absolute;
-      left: 0px;
-      top: 0;
-      z-index: 1000000;
-  }
+    @include mq(leftCol) {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    &::after {
+      @include mq(leftCol) {
+        content:'';
+        border-right: 1px solid $neutral-86;
+        display: block;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 10000px;
+      }
+    }
 }
 
 .interactive-share {
-    height: 32px;
-    width: 32px;
-    border-radius: 34px;
-    background: #333;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 30px;
-    background-color: rgba(255,255,255,0.25);
+  height: 32px;
+  width: 32px;
+  border-radius: 34px;
+  display: inline-block;
+  border: 1px solid $neutral-86;
+  cursor: pointer;
+  outline: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 32px;
+  margin-bottom: 16px;
+  &[data-network='facebook'] {
+      background-image: url("<%= path %>/assets/facebook.svg");
+      background-color: white;
+  }
+  &[data-network='twitter'] {
+      background-image: url("<%= path %>/assets/twitter.svg");
+      background-color: white;
+  }
+  &[data-network='email'] {
+      background-image: url("<%= path %>/assets/mail.svg");
+      background-color: white;
+  }
+}
+
+.interactive-share:hover {
+  cursor: pointer;
+  background-color: $news-red;
 
     &[data-network='facebook'] {
-        border: 1px solid #dcdcdc;
-        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iLTIgLTIgMzIgMzIiPjxwYXRoIGZpbGw9IiM3Njc2NzYiIGQ9Ik0xNy45IDE0aC0zdjhIMTJ2LThoLTJ2LTIuOWgyVjguN0MxMiA2LjggMTMuMSA1IDE2IDVjMS4yIDAgMiAuMSAyIC4xdjNoLTEuOGMtMSAwLTEuMi41LTEuMiAxLjN2MS44aDNsLS4xIDIuOHoiLz48L3N2Zz4=);
-        &:hover {
-            border: 1px solid #767676;
-        }
+        background-image: url("<%= path %>/assets/facebook-white.svg");
     }
-
     &[data-network='twitter'] {
-        background-color: #fff;
-        border: 1px solid #dcdcdc;
-        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iLTIgLTIgMzIgMzIiPjxwYXRoIGZpbGw9IiM3Njc2NzYiIGQ9Ik0yMS4zIDEwLjV2LjVjMCA0LjctMy41IDEwLjEtOS45IDEwLjEtMiAwLTMuOC0uNi01LjMtMS42LjMgMCAuNi4xLjguMSAxLjYgMCAzLjEtLjYgNC4zLTEuNS0xLjUgMC0yLjgtMS0zLjMtMi40LjIgMCAuNC4xLjcuMWwuOS0uMWMtMS42LS4zLTIuOC0xLjgtMi44LTMuNS41LjMgMSAuNCAxLjYuNC0uOS0uNi0xLjYtMS43LTEuNi0yLjkgMC0uNi4yLTEuMy41LTEuOCAxLjcgMi4xIDQuMyAzLjYgNy4yIDMuNy0uMS0uMy0uMS0uNS0uMS0uOCAwLTIgMS42LTMuNSAzLjUtMy41IDEgMCAxLjkuNCAyLjUgMS4xLjgtLjEgMS41LS40IDIuMi0uOC0uMy44LS44IDEuNS0xLjUgMS45LjctLjEgMS40LS4zIDItLjUtLjQuNC0xIDEtMS43IDEuNXoiLz48L3N2Zz4=);
-        &:hover {
-            border: 1px solid #767676;
-        }
+            background-image: url("<%= path %>/assets/twitter-white.svg");
+    }
+    &[data-network='email'] {
+            background-image: url("<%= path %>/assets/mail-white.svg");
+    }
+}
+
+.gv-byline {
+  @include fs-bodyCopy(2);
+  font-style: italic;
+  line-height: 20px;
+  margin-bottom: 10px;
+
+  a {
+    font-style:normal;
+    font-weight: bold;
+    color: $news-red;
+  }
+}
+
+// badging //
+.container-badge {
+  width: 100%;
+  position: relative;
+  display: block;
+  @include fs-textSans(1);
+
+
+
+
+  a {
+    color: $news-red;
+  }
+
+  .badge {
+    border-top: 1px solid $neutral-86;
+    border-bottom: 1px solid $neutral-86;
+    padding-top: 2px;
+
+    @include mq(desktop) {
+        border-bottom: none;
     }
 
-    &[data-network='email'] {
-        background-color: #fff;
-        border: 1px solid #dcdcdc;
-        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iLTIgLTIgMzIgMzIiPjxwYXRoIGZpbGw9IiM3Njc2NzYiIGQ9Ik0yMC4yIDExLjdsLS40LS40LTUuNyAyLjctNS43LTIuNy0uMy40IDYgNC45IDYuMS00Ljl6TTIxLjQgN0g2LjVMNSA5LjV2OS4zTDYuNiAyMGgxNC45bDEuNS0xLjJWOS41TDIxLjQgN3ptLS41IDEwLjhINy4xVjkuMmgxMy44djguNnoiLz48L3N2Zz4=);
-        &:hover {
-            border: 1px solid #767676;
-        }
+  }
+
+  .badge {
+    text-align: left;
+    overflow: hidden;
+  }
+
+  .badge__link {
+    display: block;
+    padding-right: 10px;
+
+    img {
+      max-width: 100%;
     }
+  }
+  .badge__logo {
+    margin-left: 0;
+  }
+
+
 }
