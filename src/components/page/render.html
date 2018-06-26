@@ -1,0 +1,62 @@
+{{#each blocks as block}}
+
+  {{#if block.block.toLowerCase() === 'text'}}
+    <Copy block={{block}}></Copy>
+  {{elseif block.block.toLowerCase() === 'photo'}}
+    <Image block={{block}}></Image>
+  {{elseif block.block.toLowerCase() === 'grid'}}
+    <Grid block={{block}} serverside={{serverside}}></Grid>
+  {{elseif block.block.toLowerCase() === 'video'}}
+    <Video block={{block}} serverside={{serverside}} controls="true" loop="false" header="false"></Video>
+  {{elseif block.block.toLowerCase() === 'header'}}
+    <Header block={{block}} serverside={{serverside}}></Header>
+    <Share block={{block}} serverside={{serverside}}></Share>
+    <Badge block={{block}} serverside={{serverside}}></Badge>
+  {{elseif block.block.toLowerCase() === 'subheader'}}
+    <Subheader block={{block}}></Subheader>
+  {{elseif block.block.toLowerCase() === 'iframe'}}
+    <Iframe block={{block}}></Iframe>
+  {{elseif block.block.toLowerCase() === 'youtube'}}
+    <YouTube block={{block}} serverside={{serverside}}></YouTube>
+  {{elseif block.block.toLowerCase() === 'badge'}}
+    <Badge block={{block}} serverside={{serverside}}></Badge>
+  {{/if}}
+{{/each}}
+
+
+<script>
+const requireUncached = require('require-uncached');
+const Image = requireUncached('../image/render.html')
+const Copy = requireUncached('../copy/render.html')
+const YouTube = requireUncached('../youtube-player/index.html')
+const Video = requireUncached('../video/index.html')
+const Grid = requireUncached('../grid/render.html')
+const Header = requireUncached('../header/render.html')
+const Subheader = requireUncached('../subheader/render.html')
+const Iframe = requireUncached('../iframe/render.html')
+const Badge = requireUncached('../badge/render.html')
+const Share = requireUncached('../share/render.html')
+
+export default {
+    oncreate() {
+
+        },
+        components:{
+          Image: Image,
+          Copy: Copy,
+          Video: Video,
+          YouTube: YouTube,
+          Grid: Grid,
+          Header: Header,
+          Subheader: Subheader,
+          Iframe: Iframe,
+          Badge: Badge,
+          Share: Share
+        }
+
+}
+
+</script>
+<style>
+
+</style>

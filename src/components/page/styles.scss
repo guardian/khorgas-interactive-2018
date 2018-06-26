@@ -1,0 +1,81 @@
+@import "mq";
+
+h1.content__headline {
+    @include fs-headline(9);
+}
+
+.interactive-atom {
+    // p,
+    // h2,
+    // .visual-element {
+    //     max-width: 620px;
+
+
+    //     @include mq(leftCol) {
+    //         margin-left: 160px;
+    //     }
+    //     @include mq(wide) {
+    //         margin-left: 240px;
+    //     }
+    // }
+
+    &>h2 {
+        font-family: "Guardian Egyptian Web", Georgia;
+        font-size: 36px;
+        line-height: 42px;
+        font-weight: 200;
+        color: #333;
+        margin-top: 36px;
+        margin-bottom: 6px;
+    }
+
+    div[class^="visual-element"] {
+        @include mq(leftCol) {
+            margin-bottom: 0px;
+        }
+    }
+
+    .visual-element--inline {
+        max-width: 620px;
+        @include mq(leftCol) {
+            margin-left: 160px;
+        }
+        @include mq(wide) {
+            margin-left: 260px;
+        }
+    }
+
+    .visual-element--immersive {
+        // max-width: 620px;
+        // margin-left: 0;
+
+
+
+        // @include mq(leftCol) {
+        //     max-width: 1140px;
+        // }
+
+        // @include mq(wide) {
+        //     max-width: 1300px;
+        // }
+    }
+
+    .visual-element--grid {
+      max-width: initial;
+      margin-left: initial;
+    }
+
+    .visual-element--showcase {
+        max-width: 660px;
+
+        @include mq(desktop) {
+            margin-left: 180px;
+            max-width: 800px;
+        }
+
+        @include mq(wide) {
+            margin-left: 260px;
+            max-width: 880px;
+        }
+    }
+}

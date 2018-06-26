@@ -1,0 +1,107 @@
+.gv-header-wrapper {
+    margin: 0 auto;
+    overflow: hidden;
+    @include mq(tablet) {
+        height: calc(100vw * (9/16));
+    }
+
+    .visual-element--video {
+        z-index: 1000;
+        background-color: #333;
+        height: 100%;
+
+        video {
+            // height: 100%;
+            min-height: 100%;
+            min-width: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    .visual-element--image {
+        position: relative;
+        padding-left: 40px;
+        height: 85vh;
+        img {
+            overflow: hidden;
+            position: absolute;
+            height: 85vh;
+            top: 0px;
+            right: -140px;
+            width: auto;
+
+            @include mq($from: mobileMedium) {
+                right: -160px;
+            }
+            @include mq($from: 620px) {
+                right: 0px;
+            }
+        }
+    }
+}
+
+.gv-header {
+    position: absolute;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+}
+
+.gv-header-wrapper::before {}
+
+.gv-headline__image {
+    content: "";
+    position: absolute;
+    display: block;
+    background: url('<%= path %>/assets/header-logo-mobile.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1001;
+    width: 106px;
+    height: 207px;
+    right: 56%;
+    top: calc(80vh * (7/16));
+
+    @include mq($from: mobileMedium) {
+        width: 126px;
+        height: 247px;
+    }
+
+    @include mq($from: mobileLandscape) {
+        right: 73%;
+    }
+
+
+    @include mq($from: tablet) {
+      background: url('<%= path %>/assets/header-logo.svg');
+      background-size: cover;
+      width: 196px;
+      height: 114px;
+      top: calc(12vw * (9/16));
+      right: 36.5%;
+    }
+
+    @include mq($from: desktop) {
+        width: 244px;
+        height: 140px;
+    }
+    @include mq($from: leftCol) {
+        width: 278px;
+        height: 161px;
+    }
+
+    @include mq($from: wide) {
+        width: 316px;
+        height: 183px;
+    }
+}
+
+.gv-headline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  color: #fff;
+
+}

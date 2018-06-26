@@ -1,0 +1,77 @@
+.gv-subheader:first-child {
+  padding-top: 0px;
+}
+
+.interactive-atom div.gv-subheader-parent {
+  padding-top: 28px;
+}
+
+.no-padding  {
+  padding-top: 0px !important;
+  @include mq(desktop) {
+    padding-top: 12px !important;
+  }
+}
+
+
+.gv-subheader {
+  width: 100%;
+  // height: 130px;
+  overflow: visible;
+  position: relative;
+  height: 100%;
+  padding-top: 40px;
+
+  @include mq(mobileMedium) {
+    // height: 140px;
+  }
+
+  @include mq(desktop) {
+    height: 0;
+  }
+}
+
+.gv-subheader-logo {
+  position: relative;
+  left: 10px;
+  top: 0px;
+  padding-bottom: 6px;
+
+  img {
+    max-width: 100%;
+  }
+
+  img.desktop {
+    display: none;
+  }
+
+  @include mq($from: mobileLandscape) {
+    left: 20px;
+  }
+
+  @include mq($from: desktop) {
+    position: absolute;
+    left: 10px;
+    top: 0px;
+
+    img.mobile {
+      display: none;
+    }
+
+    img.desktop {
+      display: block;
+      max-width: 160px;
+    }
+
+  }
+
+  @include mq($from: wide) {
+    left: 24px;
+
+    img.desktop {
+      max-width: 220px;
+    }
+
+  }
+
+}

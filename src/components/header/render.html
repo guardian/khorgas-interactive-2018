@@ -1,0 +1,48 @@
+<div class="gv-header-wrapper">
+
+    <div class="int-desktop-only">
+        <Video block={{videoBlock}} serverside={{serverside}} controls="false" loop="true" header="true"></Video>
+    </div>
+    <div class="int-mobile-only">
+        <Image block={{pictureBlock}} serverside={{serverside}}></Image>
+    </div>
+    <div class="gv-header"></div>
+      <h1 class='gv-headline'>{{block.copy}}</h1>
+      <div class="gv-headline__image">
+
+      </div>
+</div>
+<script>
+const requireUncached = require('require-uncached');
+const Image = requireUncached('../image/render.html');
+const Video = requireUncached('../video/index.html');
+
+export default {
+    data() {
+        return {
+            videoBlock: {
+                block: "video",
+                mobileSrc: "https://interactive.guim.co.uk/2017/11/tower_videos/final/720loop1.mp4",
+                desktopSrc: "https://interactive.guim.co.uk/2017/11/tower_videos/final/720loop1.mp4",
+                weight: "grid",
+                loop: true,
+                poster: '<%= path %>/assets/poster2.jpg'
+            },
+            pictureBlock: {
+                "block": "photo",
+                "weight": "immersive",
+                "mobileSrc": `<%= path %>/assets/tower-mobile-750.jpg`,
+                "desktopSrc": `<%= path %>/assets/tower-mobile.jpg`,
+            }
+        }
+    },
+    oncreate() {
+
+    },
+    components: {
+        Image: Image,
+        Video: Video
+    },
+
+}
+</script>

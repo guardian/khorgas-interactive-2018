@@ -1,0 +1,64 @@
+.interactive-atom {
+  p {
+
+        font-family: $f-serif-text;
+        font-size: 16px;
+        line-height: 24px;
+        padding-bottom: 10px;
+
+  }
+
+
+
+
+  h2 {
+      font-family: $f-serif-headline;
+      font-size: 18px;
+      line-height: 24px;
+      padding-bottom: 10px;
+  }
+
+
+
+
+  .dropcap {
+    p:first-child:first-letter {
+      display: inline-block;
+      background-image: url('<%= path %>/assets/dropcap.svg');
+      float: left;
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-top: 6px;
+      margin-right: 8px;
+      padding-right: 60px;
+      line-height: 90px;
+      font-size: 0px;
+    }
+  }
+
+  @-moz-document url-prefix() {
+    .dropcap {
+      p:first-child::first-letter {
+        background-image: none;
+        font-size: 120px;
+        line-height: 120px;
+        padding-right: 0px;
+        color: #676767;
+      }
+}
+}
+
+  .author {
+    padding-top: 6px;
+    margin-bottom: 6px;
+      p {
+        border-bottom: 1px dotted #dcdcdc;
+        font-family: $f-serif-headline;
+        weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: #767676;
+      }
+
+  }
+}

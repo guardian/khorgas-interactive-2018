@@ -1,0 +1,9 @@
+<div class='visual-element--image visual-element--{{block.weight ? block.weight : 'inline '}}'>
+    <div class='visual-image'>
+        <picture>
+            <source media="(min-width: 700px)" srcset="{{block.desktopSrc}}">
+            <source srcset="{{block.mobileSrc}}">
+            <img src="{{block.desktopSrc}}" alt="">
+        </picture>
+    </div>
+</div>

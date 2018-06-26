@@ -1,0 +1,25 @@
+<div class="gv-block gv-page-width">
+  <div class="gv-main-column {{block.class}}">
+  	{{#each block.copy.replace(/[\r\n]+/g, '\n').split('\n') as copy}}
+  		<p>{{{copy}}}</p>
+  	{{/each}}
+  </div>
+</div>
+
+<script>
+const requireUncached = require('require-uncached');
+const Image = requireUncached('../image/render.html');
+const Video = requireUncached('../video/index.html');
+
+export default {
+    oncreate() {
+
+        },
+        components:{
+          Image: Image,
+          Video: Video
+        },
+
+}
+
+</script>

@@ -1,0 +1,281 @@
+.interactive-atom {
+  .grid-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    overflow: hidden;
+
+    margin-bottom: 24px;
+
+    img, video {
+      min-width: 100%;
+      min-height: 100%;
+      object-position: 50% 50%;
+      object-fit: cover;
+    }
+
+    .visual-element--image, .visual-element--grid {
+      height: 100%;
+
+      .visual-image {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .visual-element--video {
+      margin-bottom: 0 !important;
+    }
+    // .video-wrapper {
+    //   padding-bottom: initial !important;
+    //   height: initial !important;
+    // }
+
+
+  }
+
+  .grid-wrapper > * {
+    flex: 1 1 100%;
+    outline: 4px solid #EAEAEA;
+    box-sizing: border-box;
+    background-color: #000;
+
+    @include mq($from: desktop) {
+      position: relative;
+    }
+
+  }
+
+
+  .grid-layout-1 {
+    .grid-video {
+      display: none;
+    }
+
+    .grid-image-1 {
+      order: 5;
+    }
+
+    .grid-image-portrait {
+      flex: 1 1 50%;
+      height: 190px;
+
+      @include mq($from: mobileLandscape) {
+        height: initial;
+      }
+    }
+
+    @include mq($from: tablet) {
+
+      .grid-image-1   {
+        order: 3;
+        flex: 1 1 40%;
+        height: 200px;
+      }
+
+      .grid-image-2    {
+        order: 1;
+      }
+
+      .grid-image-3   {
+        order: 4;
+      }
+
+      .grid-image-4    {
+        order: 5;
+      }
+
+      .grid-image-portrait {
+        flex: 1 1 30%;
+        height: 200px;
+      }
+    }
+
+    @include mq($from: desktop) {
+      .grid-video    {
+        display: flex;
+        order: 2;
+        flex: 1 1 60%;
+        height: 100%;
+      }
+      .grid-image-1   {
+        order: 1;
+        flex: 1 1 40%;
+        height: 330px;
+      }
+      .grid-image-2    {
+        order: 3;
+        flex: 1 1 50%;
+        height: 100%;
+      }
+      .grid-image-portrait {
+        order: 5;
+        flex: 1 1 25%;
+        height: 275px;
+      }
+    }
+
+    @include mq($from: leftCol) {
+      .grid-video    {
+        flex: 1 1 60%;
+        height: 100%;
+      }
+      .grid-image-1   {
+        order: 1;
+        flex: 1 1 40%;
+        height: 384px;
+      }
+      .grid-image-2    {
+        order: 3;
+        flex: 1 1 50%;
+        height: 100%;
+      }
+      .grid-image-portrait {
+        order: 5;
+        flex: 1 1 25%;
+        height: 320px;
+      }
+    }
+
+
+    @include mq($from: wide) {
+      .grid-video    {
+        flex: 1 1 800px;
+        height: 446px;
+      }
+      .grid-image-1   {
+        order: 1;
+        flex: 1 1 500px;
+        height: 446px;
+      }
+      .grid-image-2    {
+        order: 3;
+        flex: 1 1 640px;
+        height: 364px;
+      }
+      .grid-image-portrait {
+        flex: 1 1 330px;
+        height: 364px;
+      }
+    }
+  }
+
+
+
+
+
+  .grid-layout-2 {
+    .grid-video {
+      display: none;
+    }
+
+    .grid-image-1 {
+      order: 2;
+    }
+
+    .grid-image-2 {
+      order: 1;
+    }
+
+    .grid-image-portrait {
+      flex: 1 1 50%;
+      height: 190px;
+
+      @include mq($from: mobileLandscape) {
+        height: initial;
+      }
+
+    }
+
+
+    @include mq($from: tablet) {
+
+      .grid-image-1   {
+        order: 3;
+        flex: 1 1 40%;
+        height: 200px;
+      }
+
+      .grid-image-2    {
+        order: 1;
+        z-index: 999;
+      }
+
+      .grid-image-3   {
+        order: 4;
+      }
+
+      .grid-image-4    {
+        order: 5;
+      }
+
+      .grid-image-portrait {
+        flex: 1 1 30%;
+        height: 200px;
+      }
+    }
+
+    @include mq($from: desktop) {
+      .grid-video    {
+        display: flex;
+        order: 3;
+        flex: 1 1 50%;
+        height: 100%;
+      }
+      .grid-image-1   {
+        order: 1;
+        flex: 1 1 40%;
+        height: 330px;
+      }
+      .grid-image-2    {
+        order: 2;
+        flex: 1 1 60%;
+        height: 100%;
+      }
+      .grid-image-portrait {
+        order: 5;
+        flex: 1 1 25%;
+        height: 275px;
+      }
+    }
+
+    @include mq($from: leftCol) {
+      .grid-video    {
+        flex: 1 1 50%;
+        height: 100%;
+      }
+      .grid-image-1   {
+        flex: 1 1 40%;
+        height: 384px;
+      }
+      .grid-image-2    {
+        flex: 1 1 60%;
+        height: 100%;
+      }
+      .grid-image-portrait {
+        flex: 1 1 25%;
+        height: 320px;
+      }
+    }
+
+
+    @include mq($from: wide) {
+      .grid-video    {
+        flex: 1 1 50%;
+        height: 364px;
+      }
+      .grid-image-1   {
+        flex: 1 1 50%;
+        height: 364px;
+      }
+      .grid-image-2    {
+        flex: 1 1 50%;
+        height: 364px;
+      }
+      .grid-image-portrait {
+        flex: 1 1 25%;
+        height: 364px;
+      }
+    }
+  }
+
+}

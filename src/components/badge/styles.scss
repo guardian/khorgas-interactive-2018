@@ -1,0 +1,42 @@
+.container-badge {
+  width: calc(100% - 20px);
+
+  margin: 0 10px;
+  position: relative;
+
+  @include fs-textSans(1);
+
+  @include mq(mobileLandscape) {
+      width: calc(100% - 40px);
+      margin: 0 20px;
+    }
+
+    @include mq(desktop) {
+        width: calc(100% - 40px);
+        margin: 0 60px;
+      }
+
+  .badge {
+    border-top: 1px dotted #ccc;
+    border-bottom: 1px dotted #ccc;
+    @include mq(desktop) {
+        border-top: none;
+        border-bottom: none;
+        position: absolute;
+        right: 20px;
+        top: 0;
+        z-index: 1000000;
+    }
+
+  }
+
+  .badge {
+    text-align: left;
+    overflow: hidden;
+  }
+
+  .badge__link{
+    display: block;
+
+  }
+}

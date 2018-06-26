@@ -1,0 +1,198 @@
+{{#if serverside}}
+    {{#if block.weight === "grid"}}
+        <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}" data-loop="{{loop}}" data-header={{header}} data-poster={{block.poster}}>
+        </div>
+    {{else}}
+        <div class="gv-block gv-page-width">
+            <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}" data-loop="{{loop}}" data-header={{header}} data-poster={{block.poster}}>
+            </div>
+        </div>
+    {{/if}}
+{{else}}
+    <div class="video-wrapper">
+        {{#if poster}}
+            <video ref:video webkit-playsinline playsinline muted loop={{loop}} preload="none" poster="{{poster}}" autoplay={{header}}>
+                {{#if shouldLoad}}
+                    <source src="{{bestSource}}" />
+                {{/if}}
+            </video>
+        {{else}}
+            <video ref:video webkit-playsinline playsinline muted loop={{loop}} preload="none" autoplay={{header}}>
+                {{#if shouldLoad}}
+                    <source src="{{bestSource}}" />
+                {{/if}}
+            </video>
+        {{/if}}
+    </div>
+    {{#if controls}}
+        <div class="g-vam-video-timer-container {{playing ? 'g-vam-video-playing' : 'g-vam-video-paused'}}">
+            <svg class='g-video-timer' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" on:click="playPause(event)">
+                <circle class='g-timer-btn-bg' cx="50" cy="50" r="44" />
+                <circle class='g-timer-bg' cx="50" cy="50" r="44" />
+                <circle class='g-timer-anim' cx="50" cy="50" r="44" stroke-dashoffset="{{timerPerc}}"/>
+                <polygon class='g-icon-pause' points="31.531,45.383 31.531,36.148 66.23,36.148 68.469,38.387 68.469,45.383 " />
+                <polygon class='g-icon-pause' points="33.77,63.852 31.531,61.613 31.531,54.617 68.469,54.617 68.469,63.852 " />
+                <polygon class='g-icon-play' points="50.779,73.109 65.4,37.602 64.445,36.364 35.514,36.364 34.604,37.608 49.221,73.109 " />
+            </svg>
+            <div class="g-vam-video-btn-label" on:click="unmute(event)" ref:playSound>
+                <span class="g-muted-text">Play with sound</span>
+            </div>
+        </div>
+    {{/if}}
+{{/if}}
+<script>
+
+import tracker from '../../js/tracking.js'
+
+export default {
+
+    oncreate() {
+        if(!window.analytics) {
+            window.analytics = tracker();
+        }
+
+        if (this.get("targetEl").clientWidth >= 620) {
+            this.set({
+                "bestSource": this.get("desktopSrc")
+            });
+        } else {
+            this.set({
+                "bestSource": this.get("mobileSrc")
+            });
+        }
+
+        this.set({
+            "controls": this.get("targetEl").getAttribute("data-controls") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-controls")),
+            "loop": this.get("targetEl").getAttribute("data-loop") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-loop")),
+            "header": this.get("targetEl").getAttribute("data-header") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-header")),
+            "id": this.get("bestSource").split("/").slice(-1)[0]
+        });
+
+        const poster = this.get("targetEl").getAttribute("data-poster");
+
+        if(poster != "undefined") {
+            this.set({
+                "poster": poster
+            })
+        } else {
+            this.set({
+                "poster": false
+            })
+        }
+
+        window.requestAnimationFrame(() => {
+            this.checkIfInView();
+        });
+
+        this.refs.video.addEventListener("timeupdate", () => {
+            this.set({
+                "currentTime": this.refs.video.currentTime,
+                "duration": this.refs.video.duration,
+                "playing": !this.refs.video.paused
+            })
+        });
+
+        this.refs.video.addEventListener("ended", () => {
+            this.set({
+                "manuallyPaused": true
+            });
+
+            this.refs.video.pause();
+            this.refs.video.currentTime = .01;
+        });
+    },
+
+    components: {
+
+    },
+    computed: {
+        timerPerc: (currentTime, duration) => {
+            if(currentTime && duration) {
+                return (-currentTime/duration * 274) + "%";
+            } else {
+                return 0;
+            }
+        }
+    },
+    methods: {
+        checkIfInView: function() {
+            if (this.get("scrollPos") !== window.pageYOffset) {
+                const bbox = this.get("targetEl").getBoundingClientRect();
+                if (bbox.top > -(window.innerHeight) && bbox.bottom < 2 * window.innerHeight) {
+                    if (!this.get("shouldLoad")) {
+                        this.set({
+                            "shouldLoad": true
+                        });
+
+                        this.refs.video.load();
+                        this.refs.video.currentTime = .01;
+                    }
+
+                    if ((this.get("header") && bbox.bottom > 0) || ((this.get("loop") && !this.get("header")) && bbox.top > -window.innerHeight/2 && bbox.bottom < window.innerHeight*1.5  ) || (bbox.top > 0 && bbox.bottom < window.innerHeight)) {
+                        try {
+                            if(!this.get("manuallyPaused")) {
+                                this.refs.video.play();
+
+                                if(!this.get("analyticsSent")) {
+                                    window.analytics.registerEvent('grenfell_video_start', "play_" + this.get("id"));
+
+                                    this.set({
+                                        "analyticsSent": true
+                                    });
+                                }
+                            }
+                        } catch (err) {}
+                    } else {
+                        try {
+                            this.refs.video.pause();
+                        } catch (err) {}
+                    }
+                } else {
+                    if (this.get("shouldLoad")) {
+                        this.set({
+                            "shouldLoad": false
+                        });
+
+                        this.refs.video.load();
+
+                        this.refs.video.currentTime = .01;
+                        // this.refs.video.play();
+
+                        // window.requestAnimationFrame(() => {
+                        //     this.refs.video.pause();
+                        // });
+                    }
+                }
+
+                this.set({ "scrollPos": window.pageYOffset });
+            }
+
+            setTimeout(() => {
+                window.requestAnimationFrame(() => {
+                    this.checkIfInView();
+                });
+            }, 250);
+        },
+        unmute: function(e) {
+            this.refs.video.muted = false;
+            this.refs.playSound.style.display = "none";
+
+            this.refs.video.currentTime = .01;
+
+            window.analytics.registerEvent('grenfell_video_unmute', "unmute_" + this.get("id"));
+        },
+        playPause: function(e) {
+            if(this.get("playing")) {
+                this.refs.video.pause();
+            } else {
+                this.refs.video.play();
+            }
+
+            this.set({
+                "playing": !this.refs.video.paused,
+                "manuallyPaused": true
+            });
+        }
+    }
+};
+</script>

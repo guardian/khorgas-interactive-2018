@@ -1,0 +1,33 @@
+.visual-element--youtube {
+    display: block !important;
+
+    .player-wrapper {
+        padding-bottom: 60%;
+        width: 100%;
+        position: relative;
+        background-color: #f6f6f6;
+        display: block !important;
+    }
+}
+
+.visual-element--youtube iframe {
+    position: absolute;
+}
+
+.play-sound {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-family: "Guardian Text Sans Web";
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 12px;
+    cursor: pointer;
+
+    &:hover {
+        color: #4bc6df;
+    }
+}

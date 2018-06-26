@@ -1,0 +1,192 @@
+@import "mq";
+@import "fonts";
+
+// Uncomment for embeds
+//@import "embed";
+
+// Uncomment for full screen (including immersive article main media)
+//@import "fullscreen";
+
+body {
+  background: #fff;
+}
+
+
+
+.l-footer {
+  display: block !important;
+}
+
+.element-atom,
+.interactive-atom {
+    margin: 0 !important;
+
+
+}
+
+a:any-link {
+  color: #005689;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@import "../components/copy/styles";
+@import "../components/page/styles";
+@import "../components/image/styles";
+@import "../components/grid/styles";
+@import "../components/header/styles";
+@import "../components/subheader/styles";
+@import "../components/video/styles";
+@import "../components/badge/styles";
+@import "../components/share/styles";
+
+
+// @each $bp in (tablet, desktop, wide) {
+//         	@include mq($bp) {
+//             	max-width: map-get($mq-breakpoints, $bp);
+//         	}
+//     }
+
+
+
+.interactive-atom {
+
+    .int-mobile-only {
+        @include mq(tablet) {
+            display: none;
+        }
+    }
+
+    .int-desktop-only {
+        display: block;
+        height: 100%;
+        width: 100%;
+        @include mq($until: tablet) {
+            display: none;
+        }
+    }
+
+    overflow: hidden;
+
+	&:before, &:after {
+		content: '';
+    	position: absolute;
+    	z-index: 1;
+    	background: rgba(51,51,51,0.05);
+    	top: 0;
+    	height: 100%;
+    	width: 0;
+
+    	//width: calc((100% - 46.25rem) / 2);
+    	@each $bp in (phablet, tablet, desktop, leftCol, wide) {
+        	@include mq($bp) {
+        		$bpwidth: map-get($mq-breakpoints, $bp);
+            	width: calc((100% - #{$bpwidth}) / 2);
+        	}
+    	}
+	}
+
+	&:before {
+		left: 0;
+	}
+
+	&:after {
+		right: 0;
+	}
+
+
+
+	.gv-block {
+
+         position: relative;
+         margin: 0;
+         padding: 0;
+         max-width: none;
+         height: auto;
+
+
+        &.gv-full-width {
+
+        width: 100%;
+
+        }
+
+        &.gv-page-width {
+
+		margin: 0 auto;
+		@each $bp in (phablet, tablet, desktop, leftCol, wide) {
+        	@include mq($bp) {
+            	max-width: map-get($mq-breakpoints, $bp);
+        	}
+    	}
+
+        }
+
+
+
+
+        .gv-main-column {
+            margin: 0 10px;
+            max-width: 620px;
+            // padding: 0 10px 20px 10px;
+
+            @include mq(mobileLandscape) {
+                margin: 0 20px;
+            }
+
+            @include mq(phablet) {
+                margin: 0 20px;
+            }
+
+            @include mq(tablet) {
+                margin: 0 0 0 20px;
+
+            }
+            @include mq(desktop) {
+                margin: 0 0 0 180px;
+            }
+
+            @include mq(wide) {
+                margin: 0 0 0 260px;
+            }
+
+        }
+
+        // badge styling //
+        .gv-main-column {
+            p:first-child {
+                @include mq(desktop) {
+                    max-width: 520px;
+                }
+                @include mq(leftCol) {
+                    max-width: initial;
+                }
+              }
+        }
+
+
+        .gv-left-column {
+            z-index: 9999;
+            @include mq(leftCol) {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            margin: 0;
+            width: 140px;
+
+            }
+            @include mq(wide) {
+                width: 220px;
+            }
+        }
+
+        .gv-right-column {
+
+
+            width: 100%;
+        }
+
+
+	}
+
+}
