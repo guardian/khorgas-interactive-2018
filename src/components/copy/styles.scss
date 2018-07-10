@@ -65,6 +65,20 @@
         line-height: 22px;
         color: #767676;
       }
-
+  }
+  .intro {
+    @include mq(leftCol) {
+      min-height: 240px;
+    }
+    p {
+    @include fs-headline(3);
+    font-weight: 300;
+    font-style: italic;
+    padding-top: 10px;
+    padding-bottom: 12px;
+    @include mq(leftCol) {
+      padding-bottom: 32px;
+    }
+  }
   }
 }

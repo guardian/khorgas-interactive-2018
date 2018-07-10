@@ -2,9 +2,9 @@
   padding-top: 0px;
 }
 
-.interactive-atom div.gv-subheader-parent {
-  padding-top: 28px;
-}
+// .interactive-atom div.gv-subheader-parent {
+//   padding-top: 28px;
+// }
 
 .no-padding  {
   padding-top: 0px !important;
@@ -15,63 +15,64 @@
 
 
 .gv-subheader {
-  width: 100%;
-  // height: 130px;
-  overflow: visible;
-  position: relative;
-  height: 100%;
-  padding-top: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  h2 {
+    @include fs-titlepiece(3);
+    color: $news-red;
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 600;
+    padding-top: 16px;
+    padding-bottom: 12px;
+    @include mq(leftCol) {
+        font-size: 38px;
+        line-height: 38px;
+        margin-bottom: -40px;
+    }
+  }
+
 
   @include mq(mobileMedium) {
     // height: 140px;
   }
 
-  @include mq(desktop) {
-    height: 0;
-  }
 }
 
-.gv-subheader-logo {
-  position: relative;
-  left: 10px;
-  top: 0px;
-  padding-bottom: 6px;
+.gv-subheader-container {
+    position: relative;
+    background-image: -webkit-repeating-linear-gradient(top, $neutral-86, $neutral-86 0.0625rem, transparent 0.0625rem, transparent 0.25rem);
+    background-image: repeating-linear-gradient(to bottom, $neutral-86, $neutral-86 0.0625rem, transparent 0.0625rem, transparent 0.25rem);
+    background-repeat: repeat-x;
+    background-position: top;
+    -webkit-background-size: 1px 13px;
+    background-size: 1px 13px;
+    padding: 16px 0 32px 0;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
 
-  img {
-    max-width: 100%;
-  }
-
-  img.desktop {
-    display: none;
-  }
-
-  @include mq($from: mobileLandscape) {
-    left: 20px;
-  }
-
-  @include mq($from: desktop) {
-    position: absolute;
-    left: 10px;
-    top: 0px;
-
-    img.mobile {
-      display: none;
-    }
-
-    img.desktop {
+    &::before {
+      background-image: -webkit-repeating-linear-gradient(top, $neutral-86, $neutral-86 0.0625rem, transparent 0.0625rem, transparent 0.25rem);
+      background-image: repeating-linear-gradient(to bottom, $neutral-86, $neutral-86 0.0625rem, transparent 0.0625rem, transparent 0.25rem);
+      content: "";
       display: block;
-      max-width: 160px;
+      height: 13px;
+      width: 200vw;
+      left: -100vw;
+      position: absolute;
+      z-index: -20;
+      // top: 0px;
+
     }
 
-  }
-
-  @include mq($from: wide) {
-    left: 24px;
-
-    img.desktop {
-      max-width: 220px;
+    @include mq(tablet) {
+      margin-top: 10px;
+      margin-left: 0px;
     }
 
-  }
-
+    @include mq(leftCol) {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
 }

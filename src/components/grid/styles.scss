@@ -25,11 +25,6 @@
     .visual-element--video {
       margin-bottom: 0 !important;
     }
-    // .video-wrapper {
-    //   padding-bottom: initial !important;
-    //   height: initial !important;
-    // }
-
 
   }
 
@@ -275,6 +270,16 @@
         flex: 1 1 25%;
         height: 364px;
       }
+    }
+  }
+
+  .grid-layout-portrait {
+    display: block;
+
+    @include mq($from: leftCol) {
+      width: 540px;
+      display: grid;
+      position:relative;
     }
   }
 

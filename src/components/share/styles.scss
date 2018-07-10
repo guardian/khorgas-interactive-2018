@@ -6,19 +6,20 @@
     background-position: top;
     -webkit-background-size: 1px 13px;
     background-size: 1px 13px;
-    padding: 16px 0 32px 0;
+    padding: 16px 0;
     display: block;
     padding-left: 10px;
     padding-right: 10px;
 
+
     @include mq(tablet) {
-      margin-top: 0px;
+      margin-top: 10px;
       margin-left: 0px;
     }
 
     @include mq(leftCol) {
       padding-left: 0px;
-      padding-right: 0px;
+      padding-right:0px;
     }
 
     &::after {
@@ -27,8 +28,8 @@
         border-right: 1px solid $neutral-86;
         display: block;
         position: absolute;
-        top: 0px;
-        right: 0px;
+        top: -10px;
+        right: -10px;
         height: 10000px;
       }
     }
