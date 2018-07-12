@@ -1,3 +1,19 @@
+.gv-standfirst {
+  @include mq(leftCol) {
+    min-height: 250px;
+  }
+  p {
+  @include fs-headline(3);
+  font-weight: 300;
+  font-style: italic;
+  padding-top: 6px;
+  padding-bottom: 12px;
+  @include mq(leftCol) {
+    padding-bottom: 32px;
+  }
+}
+}
+
 .gv-meta-container {
     position: relative;
     background-image: -webkit-repeating-linear-gradient(top, $neutral-86, $neutral-86 0.0625rem, transparent 0.0625rem, transparent 0.25rem);
@@ -6,21 +22,18 @@
     background-position: top;
     -webkit-background-size: 1px 13px;
     background-size: 1px 13px;
-    padding: 16px 0;
+    padding: 16px 0 0 0;
     display: block;
-    padding-left: 10px;
-    padding-right: 10px;
+    max-width: 620px;
+    margin: 0 auto;
 
 
     @include mq(tablet) {
       margin-top: 10px;
-      margin-left: 0px;
+      // margin-left: 0px;
     }
 
-    @include mq(leftCol) {
-      padding-left: 0px;
-      padding-right:0px;
-    }
+
 
     &::after {
       @include mq(leftCol) {
@@ -122,6 +135,8 @@
   .badge__link {
     display: block;
     padding-right: 10px;
+    padding-bottom: 6px;
+    padding-top: 6px;
 
     img {
       max-width: 100%;
@@ -130,6 +145,17 @@
   .badge__logo {
     margin-left: 0;
   }
+}
 
-
+.gv-byline, .badge, .gv-share {
+  padding-left: 10px;
+  padding-right: 10px;
+  @include mq(mobileLandscape) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @include mq(leftCol) {
+    padding-left: 0px;
+    padding-right:0px;
+  }
 }
