@@ -28,17 +28,17 @@
 
   }
 
-  .grid-wrapper > * {
-    flex: 1 1 100%;
-    outline: 4px solid #EAEAEA;
-    box-sizing: border-box;
-    background-color: #000;
-
-    @include mq($from: desktop) {
-      position: relative;
-    }
-
-  }
+  // .grid-wrapper > * {
+  //   flex: 1 1 100%;
+  //   outline: 4px solid #EAEAEA;
+  //   box-sizing: border-box;
+  //   background-color: #000;
+  //
+  //   @include mq($from: desktop) {
+  //     position: relative;
+  //   }
+  //
+  // }
 
 
   .grid-layout-1 {
@@ -275,11 +275,19 @@
 
   .grid-layout-portrait {
     display: block;
+    margin-top: 48px;
+    overflow: visible;
 
     @include mq($from: leftCol) {
-      width: 540px;
       display: grid;
       position:relative;
+      grid-template-columns: 540px 540px 540px 540px 540px;
+      .grid-image-portrait {
+        // width: 540px;
+        // height: 100%;
+        margin-right: 20px;
+      }
+
     }
   }
 
