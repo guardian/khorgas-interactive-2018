@@ -1,4 +1,7 @@
 import VideoPlayer from '../components/video/index.html'
+import dragscroll from 'dragscroll'
+import Siema from 'siema'
+
 
 //initialise video player
 const VideoEls = document.querySelectorAll(".visual-element--video[data-header=true]");
@@ -70,3 +73,74 @@ var shareFn = share('The tower next door: Life #InTheShadowOfGrenfell https://ww
     var network = shareEl.getAttribute('data-network');
     shareEl.addEventListener('click',() => shareFn(network));
 });
+
+
+// SLIDER CODE
+
+var ticking = false;
+var slider = document.getElementById("slider");
+var sliderInner = document.getElementById("slider-inner");
+var slidesWidth = sliderInner.getBoundingClientRect().width / 3;
+
+slider.addEventListener("scroll", function() {
+    if (!ticking) {
+        window.requestAnimationFrame(function() {
+
+            slidesWidth = sliderInner.getBoundingClientRect().width / 3;
+
+        if (slider.scrollLeft >= (slidesWidth)) {
+             
+           slider.scrollLeft = 0;
+          
+         }
+            ticking = false;
+        });
+    }
+    ticking = true;
+});
+
+// CAROUSEL CODE
+
+const carousel = new Siema({
+  selector: '.carousel',
+  duration: 300,
+  easing: 'ease-out',
+  startIndex: 0,
+  draggable: true,
+  multipleDrag: true,
+  threshold: 20,
+  loop: false,
+  rtl: false,
+  onInit: () => {},
+  onChange: () => { updateDots(); }
+});
+
+updateDots();
+
+function updateDots() {
+
+
+  [].slice.apply(document.querySelectorAll('.dot')).forEach(dot => {
+       dot.classList.remove("dot-highlight");
+    });
+
+  document.getElementById("dot_" + carousel.currentSlide).classList.add("dot-highlight");
+
+  var slideW = document.getElementById("carousel-slide_0").getBoundingClientRect().width;
+  var wrapperW = document.getElementById("carousel-wrapper").getBoundingClientRect().width;
+
+
+  var offsetWidth = ((wrapperW - slideW) / 2) + "px";
+
+  console.log(offsetWidth);
+ 
+
+
+  if (carousel.currentSlide != 0) {
+   document.getElementById("carousel").style.marginLeft = offsetWidth;
+ } else {
+  document.getElementById("carousel").style.marginLeft="0";
+ }
+
+
+}

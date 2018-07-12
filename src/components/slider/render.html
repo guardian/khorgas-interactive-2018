@@ -1,0 +1,99 @@
+<div class="gv-block gv-full-width">
+  <div id="slider" class="slider-wrapper dragscroll {{block.class}}">
+
+<div id="slider-outer" class="outer">
+<div id="slider-inner" class="slider-inner run-animation">
+
+
+
+    {{#each block.slides as slide}}
+    	<div class="{{slide.class}}">
+	   		<!-- {{#if gridBlock.block === "video"}}
+	   			<Video block={{gridBlock}} serverside={{serverside}} controls="false" loop="true" header="false"></Video>
+	   		{{else}} -->
+	    		<div class='visual-element--image'>
+            <div class='visual-image'>
+                <picture>
+                    <source media="(min-width: 700px)" srcset="{{slide.desktopSrc}}">
+                    <source srcset="{{slide.mobileSrc}}">
+                    <img src="{{slide.desktopSrc}}" alt="">
+                </picture>
+            </div>
+        </div>
+        <div class="slider-caption">
+          <h3 class="slider-caption-heading">{{slide.captionHeading}}</h3>
+          <p class="slider-caption-copy">{{slide.captionCopy}}</p>
+        </div>
+
+	   		<!-- {{/if}} -->
+   		</div>
+    {{/each}}
+
+    {{#each block.slides as slide}}
+      <div class="{{slide.class}}">
+        <!-- {{#if gridBlock.block === "video"}}
+          <Video block={{gridBlock}} serverside={{serverside}} controls="false" loop="true" header="false"></Video>
+        {{else}} -->
+          <div class='visual-element--image'>
+            <div class='visual-image'>
+                <picture>
+                    <source media="(min-width: 700px)" srcset="{{slide.desktopSrc}}">
+                    <source srcset="{{slide.mobileSrc}}">
+                    <img src="{{slide.desktopSrc}}" alt="">
+                </picture>
+            </div>
+        </div>
+        <div class="slider-caption">
+          <h3 class="slider-caption-heading">{{slide.captionHeading}}</h3>
+          <p class="slider-caption-copy">{{slide.captionCopy}}</p>
+        </div>
+
+        <!-- {{/if}} -->
+      </div>
+    {{/each}}
+
+    {{#each block.slides as slide}}
+      <div class="{{slide.class}}">
+        <!-- {{#if gridBlock.block === "video"}}
+          <Video block={{gridBlock}} serverside={{serverside}} controls="false" loop="true" header="false"></Video>
+        {{else}} -->
+          <div class='visual-element--image'>
+            <div class='visual-image'>
+                <picture>
+                    <source media="(min-width: 700px)" srcset="{{slide.desktopSrc}}">
+                    <source srcset="{{slide.mobileSrc}}">
+                    <img src="{{slide.desktopSrc}}" alt="">
+                </picture>
+            </div>
+        </div>
+        <div class="slider-caption">
+          <h3 class="slider-caption-heading">{{slide.captionHeading}}</h3>
+          <p class="slider-caption-copy">{{slide.captionCopy}}</p>
+        </div>
+
+        <!-- {{/if}} -->
+      </div>
+    {{/each}}
+
+  </div>
+</div>
+  </div>
+</div>
+
+<script>
+// const requireUncached = require('require-uncached');
+// const Image = requireUncached('../image/render.html');
+// const Video = requireUncached('../video/index.html');
+
+export default {
+    oncreate() {
+
+        },
+        components:{
+          // Image: Image,
+          // Video: Video
+        },
+
+}
+
+</script>

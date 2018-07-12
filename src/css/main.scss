@@ -42,6 +42,8 @@ a:hover {
 @import "../components/subheader/styles";
 @import "../components/video/styles";
 @import "../components/share/styles";
+@import "../components/slider/styles";
+@import "../components/carousel/styles";
 
 
 
@@ -81,6 +83,26 @@ a:hover {
 
         width: 100%;
 
+        &.gv-plus-left-margin {
+             @each $bp in (phablet,
+        tablet,
+        desktop,
+        leftCol,
+        wide) {
+            @include mq($bp) {
+                $bpwidth: map-get($mq-breakpoints, $bp);
+                margin-left: calc((100% - #{$bpwidth}) / 2);
+                width: calc( 100% - ((100% - #{$bpwidth}) / 2));
+            }
+        }
+        }
+
+
+
+
+
+
+
         }
 
         &.gv-page-width {
@@ -93,6 +115,9 @@ a:hover {
     	}
 
         }
+
+
+        
 
 
 

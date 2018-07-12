@@ -1,0 +1,55 @@
+<div class="gv-block gv-full-width gv-plus-left-margin">
+  <div id="carousel-wrapper" class="carousel-wrapper {{block.class}}">
+  <div id="carousel" class="carousel">
+
+    {{#each block.carouselSlides as carouselSlide}}
+      <div id="carousel-slide_{{carouselSlide.slideIndex}}" class="{{carouselSlide.class}}">
+        <!-- {{#if gridBlock.block === "video"}}
+          <Video block={{gridBlock}} serverside={{serverside}} controls="false" loop="true" header="false"></Video>
+        {{else}} -->
+          <div class='visual-element--image'>
+            <div class='visual-image'>
+                <picture>
+                    <source media="(min-width: 700px)" srcset="{{carouselSlide.desktopSrc}}">
+                    <source srcset="{{carouselSlide.mobileSrc}}">
+                    <img src="{{carouselSlide.desktopSrc}}" alt="">
+                </picture>
+            </div>
+        </div>
+        <div class="carousel-caption">
+          <h3 class="carousel-caption-heading">{{carouselSlide.captionHeading}}</h3>
+          <p class="carousel-caption-copy">{{carouselSlide.captionCopy}}</p>
+        </div>
+
+        <!-- {{/if}} -->
+      </div>
+    {{/each}}
+
+  </div>
+
+  <div id="dots" class="dots">
+    {{#each block.carouselSlides as carouselSlide}}
+      <div id="dot_{{carouselSlide.slideIndex}}" class="dot"></div>
+    {{/each}}
+</div>
+
+  </div>
+</div>
+
+<script>
+// const requireUncached = require('require-uncached');
+// const Image = requireUncached('../image/render.html');
+// const Video = requireUncached('../video/index.html');
+
+export default {
+    oncreate() {
+
+        },
+        components:{
+          // Image: Image,
+          // Video: Video
+        },
+
+}
+
+</script>

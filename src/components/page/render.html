@@ -18,6 +18,10 @@
     <Iframe block={{block}}></Iframe>
   {{elseif block.block.toLowerCase() === 'youtube'}}
     <YouTube block={{block}} serverside={{serverside}}></YouTube>
+  {{elseif block.block.toLowerCase() === 'carousel'}}
+    <Carousel block={{block}}></Carousel>
+  {{elseif block.block.toLowerCase() === 'slider'}}
+    <Slider block={{block}}></Slider>
   {{/if}}
 {{/each}}
 
@@ -33,6 +37,8 @@ const Header = requireUncached('../header/render.html')
 const Subheader = requireUncached('../subheader/render.html')
 const Iframe = requireUncached('../iframe/render.html')
 const Share = requireUncached('../share/render.html')
+const Carousel = requireUncached('../carousel/render.html')
+const Slider = requireUncached('../slider/render.html')
 
 export default {
     oncreate() {
@@ -47,7 +53,9 @@ export default {
           Header: Header,
           Subheader: Subheader,
           Iframe: Iframe,
-          Share: Share
+          Share: Share,
+          Carousel: Carousel,
+          Slider: Slider
         }
 
 }
