@@ -1,51 +1,159 @@
+// If using looping video //
+
 .gv-header-wrapper {
-    width: 100%;
-    min-height: 400px;
-    background-color: $neutral-7;
-    position: relative;
-    z-index: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    @include mq(tablet) {
+        height: calc(100vw * (7/16));
+    }
 
+    .visual-element--video {
+        z-index: 0;
+        background-color: #333;
+        height: 100%;
 
-    &::before {
-      background-color: $neutral-7;
-      content: "";
-      display: block;
-      height: 100%;
-      width: 200vw;
-      left: -100vw;
-      position: absolute;
-        z-index: -20;
+        video {
+            min-height: 100%;
+            min-width: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
 
+    .visual-element--image {
+        position: relative;
+        padding-left: 40px;
+        height: 85vh;
+        img {
+            overflow: hidden;
+            position: absolute;
+            height: 85vh;
+            top: 0px;
+            left: 0px;
+            width: auto;
+
+            @include mq($from: mobileMedium) {
+                left: 0px;
+            }
+
+        }
     }
 }
-.gv-image-wrapper {
-    width: 100%;
-    min-height: 400px;
-    background-color: $highlight-yellow;
-    position: relative;
-    z-index: -1;
 
 
 
-    &::before {
-      background-color: $highlight-yellow;
-      content: "";
-      display: block;
-      height: 100%;
-      width: 200vw;
-      left: -100vw;
-      position: absolute;
-        z-index: -20;
+// If using static Image //
 
-    }
-}
+// .gv-header-wrapper {
+//     width: 100%;
+//     min-height: 400px;
+//     background-color: $neutral-7;
+//     position: relative;
+//     z-index: 0;
+//
+//
+//     &::before {
+//       background-color: $neutral-7;
+//       content: "";
+//       display: block;
+//       height: 100%;
+//       width: 200vw;
+//       left: -100vw;
+//       position: absolute;
+//         z-index: -20;
+//
+//     }
+// }
+// .gv-image-wrapper {
+//     width: 100%;
+//     min-height: 400px;
+//     background-color: $highlight-yellow;
+//     position: relative;
+//     z-index: -1;
+//
+//
+//
+//     &::before {
+//       background-color: $highlight-yellow;
+//       content: "";
+//       display: block;
+//       height: 100%;
+//       width: 200vw;
+//       left: -100vw;
+//       position: absolute;
+//         z-index: -20;
+//
+//     }
+// }
 
 .gv-header {
-    position: absolute;
-    top: 0;
-    z-index: 50;
-    width: 100%;
+  position: relative;
+  margin: 0 auto;
+  max-width: 620px;
+  // padding: 0 10px 20px 10px;
 }
+
+.gv-headline {
+      @include fs-titlepiece(3);
+      position: absolute;
+      bottom: 60vh;
+      left:  0px;
+      font-size: 44px;
+      line-height: 44px;
+      z-index: 1000;
+      color: $news-red;
+
+
+      @include mq(phablet) {
+          margin: 0 20px;
+      }
+
+      @include mq(tablet) {
+          margin: 0 0 0 -40px;
+          font-size: 36px;
+          line-height: 36px;
+          bottom: calc(75vw * (7/16));
+      }
+      @include mq(desktop) {
+          margin: 0 0 0 -160px;
+          font-size: 50px;
+          line-height: 50px;
+      }
+
+      @include mq(leftCol) {
+          margin: 0 0 0 -200px;
+          bottom: calc(80vw * (7/16));
+      }
+
+      @include mq(wide) {
+          margin: 0 0 0 -210px;
+      }
+
+      span {
+        padding-left: 126px;
+      }
+      // overflow: hidden;
+      // height: 85vh;
+      // width: auto;
+      // @include mq(tablet) {
+      //   font-size: 72px;
+      //   line-height: 60px;
+      //   left: -100px;
+      // }
+      // @include mq(desktop) {
+      //   font-size: 50px;
+      //   line-height: 50px;
+      //   left: 0px;
+      // }
+      // @include mq(leftCol) {
+      //   left: -116px;
+      // }
+      // @include mq(wide) {
+      //   left: -34px;
+      // }
+    }
+
+
 
 .gv-header-wrapper::before {}
 
@@ -96,7 +204,9 @@
     }
 }
 
-.gv-headline {
+
+
+.gv-headline-seo {
   position: absolute;
   top: 0;
   left: 0;

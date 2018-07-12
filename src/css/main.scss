@@ -138,7 +138,6 @@ a:hover {
 
 
         .gv-left-column {
-            z-index: 9999;
             @include mq(leftCol) {
             position: absolute;
             left: 10px;

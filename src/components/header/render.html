@@ -1,15 +1,16 @@
 <div class="gv-header-wrapper">
-    <!-- <div class="int-desktop-only">
+    <div class="int-desktop-only">
         <Video block={{videoBlock}} serverside={{serverside}} controls="false" loop="true" header="true"></Video>
     </div>
     <div class="int-mobile-only">
         <Image block={{pictureBlock}} serverside={{serverside}}></Image>
-    </div> -->
+    </div>
     <div class="gv-image-wrapper"></div>
-    <div class="gv-header"></div>
-      <h1 class='gv-headline'>{{block.copy}}</h1>
+    <div class="gv-header gv-page-width">
+      <div class="gv-headline gv-main-column">{{block.headlineLine1}} <br><span>{{block.headlineLine2}}</span></div>
+      <h1 class='gv-headline-seo'>{{block.copy}}</h1>
       <div class="gv-headline__image">
-
+    </div>
       </div>
 </div>
 <script>
@@ -23,7 +24,7 @@ export default {
             videoBlock: {
                 block: "video",
                 mobileSrc: "https://interactive.guim.co.uk/2017/11/tower_videos/final/720loop1.mp4",
-                desktopSrc: "https://interactive.guim.co.uk/2017/11/tower_videos/final/720loop1.mp4",
+                desktopSrc: "https://interactive.guim.co.uk/2018/07/china_loops/colour-correction-10-sec_1024_768k.mp4",
                 weight: "grid",
                 loop: true,
                 poster: '<%= path %>/assets/poster2.jpg'
@@ -31,8 +32,8 @@ export default {
             pictureBlock: {
                 "block": "photo",
                 "weight": "immersive",
-                "mobileSrc": `<%= path %>/assets/tower-mobile-750.jpg`,
-                "desktopSrc": `<%= path %>/assets/tower-mobile.jpg`,
+                "mobileSrc": `<%= path %>/assets/mobile-header1500.png`,
+                "desktopSrc": `<%= path %>/assets/mobile-header1500.jpg`,
             }
         }
     },
