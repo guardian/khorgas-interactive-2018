@@ -57,32 +57,34 @@
 
       position: absolute;
       color: #fff;
-      bottom: 0;
+      bottom: 20px;
       left: 0;
 
 
       .slider-caption-heading {
-        font-family: $f-serif-headline;
-      font-size: 18px;
-      line-height: 20px;
-      background: #ff0000;
-      display: inline;
-      //padding-bottom: 10px;
-      margin: 0;
+        @include fs-textSans(1);
+        font-weight: bold;
+        background: $news-red;
+        display: inline-block;
+        padding: 4px 10px;
+        margin: 0;
       }
 
-      .slider-caption-copy {
-        font-family: $f-serif-text;
-        font-size: 16px;
-        line-height: 18px;
-        padding-bottom: 10px;
-        display: inline;
-        background: #ff0000;
 
-        &:before {
-    content: "";
-    display: block;
-}
+      .slider-caption-copy {
+        @include fs-textSans(1);
+        padding: 4px 10px;
+        display: inline-block;
+        background: $news-red;
+        margin: 0;
+        position: relative;
+
+//         &:before {
+//           content: "";
+//           display: inline-block;
+//           width: 0px;
+//           height: 0px;
+// }
       }
 
     }
@@ -96,268 +98,13 @@
   }
 
   @keyframes moveSlideshow {
-0% { 
+0% {
     -webkit-transform: translateX(0%);
-    
-  }  
-  100% { 
-    -webkit-transform: translateX(-33.333333334%);  
+
+  }
+  100% {
+    -webkit-transform: translateX(-33.333333334%);
   }
 }
-
-  // .grid-wrapper > * {
-  //   flex: 1 1 100%;
-  //   outline: 4px solid #EAEAEA;
-  //   box-sizing: border-box;
-  //   background-color: #000;
-
-  //   @include mq($from: desktop) {
-  //     position: relative;
-  //   }
-
-  // }
-
-
-  // .grid-layout-1 {
-  //   .grid-video {
-  //     display: none;
-  //   }
-
-  //   .grid-image-1 {
-  //     order: 5;
-  //   }
-
-  //   .grid-image-portrait {
-  //     flex: 1 1 50%;
-  //     height: 190px;
-
-  //     @include mq($from: mobileLandscape) {
-  //       height: initial;
-  //     }
-  //   }
-
-  //   @include mq($from: tablet) {
-
-  //     .grid-image-1   {
-  //       order: 3;
-  //       flex: 1 1 40%;
-  //       height: 200px;
-  //     }
-
-  //     .grid-image-2    {
-  //       order: 1;
-  //     }
-
-  //     .grid-image-3   {
-  //       order: 4;
-  //     }
-
-  //     .grid-image-4    {
-  //       order: 5;
-  //     }
-
-  //     .grid-image-portrait {
-  //       flex: 1 1 30%;
-  //       height: 200px;
-  //     }
-  //   }
-
-  //   @include mq($from: desktop) {
-  //     .grid-video    {
-  //       display: flex;
-  //       order: 2;
-  //       flex: 1 1 60%;
-  //       height: 100%;
-  //     }
-  //     .grid-image-1   {
-  //       order: 1;
-  //       flex: 1 1 40%;
-  //       height: 330px;
-  //     }
-  //     .grid-image-2    {
-  //       order: 3;
-  //       flex: 1 1 50%;
-  //       height: 100%;
-  //     }
-  //     .grid-image-portrait {
-  //       order: 5;
-  //       flex: 1 1 25%;
-  //       height: 275px;
-  //     }
-  //   }
-
-  //   @include mq($from: leftCol) {
-  //     .grid-video    {
-  //       flex: 1 1 60%;
-  //       height: 100%;
-  //     }
-  //     .grid-image-1   {
-  //       order: 1;
-  //       flex: 1 1 40%;
-  //       height: 384px;
-  //     }
-  //     .grid-image-2    {
-  //       order: 3;
-  //       flex: 1 1 50%;
-  //       height: 100%;
-  //     }
-  //     .grid-image-portrait {
-  //       order: 5;
-  //       flex: 1 1 25%;
-  //       height: 320px;
-  //     }
-  //   }
-
-
-  //   @include mq($from: wide) {
-  //     .grid-video    {
-  //       flex: 1 1 800px;
-  //       height: 446px;
-  //     }
-  //     .grid-image-1   {
-  //       order: 1;
-  //       flex: 1 1 500px;
-  //       height: 446px;
-  //     }
-  //     .grid-image-2    {
-  //       order: 3;
-  //       flex: 1 1 640px;
-  //       height: 364px;
-  //     }
-  //     .grid-image-portrait {
-  //       flex: 1 1 330px;
-  //       height: 364px;
-  //     }
-  //   }
-  // }
-
-
-
-
-
-  // .grid-layout-2 {
-  //   .grid-video {
-  //     display: none;
-  //   }
-
-  //   .grid-image-1 {
-  //     order: 2;
-  //   }
-
-  //   .grid-image-2 {
-  //     order: 1;
-  //   }
-
-  //   .grid-image-portrait {
-  //     flex: 1 1 50%;
-  //     height: 190px;
-
-  //     @include mq($from: mobileLandscape) {
-  //       height: initial;
-  //     }
-
-  //   }
-
-
-  //   @include mq($from: tablet) {
-
-  //     .grid-image-1   {
-  //       order: 3;
-  //       flex: 1 1 40%;
-  //       height: 200px;
-  //     }
-
-  //     .grid-image-2    {
-  //       order: 1;
-  //       z-index: 999;
-  //     }
-
-  //     .grid-image-3   {
-  //       order: 4;
-  //     }
-
-  //     .grid-image-4    {
-  //       order: 5;
-  //     }
-
-  //     .grid-image-portrait {
-  //       flex: 1 1 30%;
-  //       height: 200px;
-  //     }
-  //   }
-
-  //   @include mq($from: desktop) {
-  //     .grid-video    {
-  //       display: flex;
-  //       order: 3;
-  //       flex: 1 1 50%;
-  //       height: 100%;
-  //     }
-  //     .grid-image-1   {
-  //       order: 1;
-  //       flex: 1 1 40%;
-  //       height: 330px;
-  //     }
-  //     .grid-image-2    {
-  //       order: 2;
-  //       flex: 1 1 60%;
-  //       height: 100%;
-  //     }
-  //     .grid-image-portrait {
-  //       order: 5;
-  //       flex: 1 1 25%;
-  //       height: 275px;
-  //     }
-  //   }
-
-  //   @include mq($from: leftCol) {
-  //     .grid-video    {
-  //       flex: 1 1 50%;
-  //       height: 100%;
-  //     }
-  //     .grid-image-1   {
-  //       flex: 1 1 40%;
-  //       height: 384px;
-  //     }
-  //     .grid-image-2    {
-  //       flex: 1 1 60%;
-  //       height: 100%;
-  //     }
-  //     .grid-image-portrait {
-  //       flex: 1 1 25%;
-  //       height: 320px;
-  //     }
-  //   }
-
-
-  //   @include mq($from: wide) {
-  //     .grid-video    {
-  //       flex: 1 1 50%;
-  //       height: 364px;
-  //     }
-  //     .grid-image-1   {
-  //       flex: 1 1 50%;
-  //       height: 364px;
-  //     }
-  //     .grid-image-2    {
-  //       flex: 1 1 50%;
-  //       height: 364px;
-  //     }
-  //     .grid-image-portrait {
-  //       flex: 1 1 25%;
-  //       height: 364px;
-  //     }
-  //   }
-  // }
-
-  // .grid-layout-portrait {
-  //   display: block;
-
-  //   @include mq($from: leftCol) {
-  //     width: 540px;
-  //     display: grid;
-  //     position:relative;
-  //   }
-  // }
 
 }
