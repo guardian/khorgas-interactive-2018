@@ -71,19 +71,20 @@
         background: $news-red;
         display: inline-block;
         float: left;
-        padding: 4px 10px;
+        padding: 2px 6px;
         margin: 0;
+        margin-top: -4px;
       }
 
 
       .slider-caption-copy {
         @include fs-textSans(1);
-        padding: 2px 10px 6px 10px;
+        padding: 2px 6px 4px 6px;
         display: inline-block;
         background: $news-red;
         float: left;
         clear: left;
-        margin-top: -4px;
+        margin-top: -2px;
 
 //         &:before {
 //           content: "";
