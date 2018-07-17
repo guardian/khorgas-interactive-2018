@@ -117,7 +117,7 @@ a:hover {
         }
 
 
-        
+
 
 
 
@@ -163,6 +163,11 @@ a:hover {
 
 
         .gv-left-column {
+            margin: 0px;
+            @include mq(desktop) {
+              margin: 0 auto;
+
+            }
             @include mq(leftCol) {
             position: absolute;
             left: 10px;

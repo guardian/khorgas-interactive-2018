@@ -76,3 +76,53 @@
       padding-right: 0px;
     }
 }
+
+.gv-subheader-map {
+  position: relative;
+  top: 0px;
+  padding-bottom: 6px;
+
+  object {
+    max-width: 50%;
+  }
+
+  object.desktop {
+    display: none;
+  }
+
+  @include mq($from: mobileLandscape) {
+    // left: 20px;
+    max-width: 480px;
+  }
+
+  @include mq($from: desktop) {
+    position: absolute;
+    left: 10px;
+    top: 64px;
+
+    object.mobile {
+      display: none;
+    }
+
+    object.desktop {
+      display: block;
+      max-width: 160px;
+    }
+
+  }
+  @include mq($from: leftCol) {
+    object.desktop {
+      max-width: 150px;
+    }
+  }
+
+  @include mq($from: wide) {
+    left: 0px;
+
+    object.desktop {
+      max-width: 240px;
+    }
+
+  }
+
+}

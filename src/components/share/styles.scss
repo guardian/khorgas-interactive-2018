@@ -1,15 +1,17 @@
 .gv-standfirst {
   @include mq(leftCol) {
-    min-height: 250px;
+    min-height: 204px;
   }
   p {
-  @include fs-headline(3);
-  font-weight: 300;
-  font-style: italic;
-  padding-top: 6px;
-  padding-bottom: 12px;
-  @include mq(leftCol) {
-    padding-bottom: 32px;
+    @include fs-headline(3);
+    font-weight: 300;
+    font-style: italic;
+    padding-top: 6px;
+    padding-bottom: 12px;
+    @include mq(leftCol) {
+      padding-bottom: 32px;
+      font-size: 22px;
+      line-height: 26px;
   }
 }
 }
@@ -118,7 +120,6 @@
 
   .badge {
     border-top: 1px solid $neutral-86;
-    border-bottom: 1px solid $neutral-86;
     padding-top: 2px;
 
     @include mq(desktop) {
