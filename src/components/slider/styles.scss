@@ -50,14 +50,18 @@
 
     position: relative;
     flex-shrink: 0;
-    height: 500px;
+    height: 400px;
     overflow: hidden;
+
+    @include mq(leftCol) {
+      height: 520px;
+    }
 
     .slider-caption {
 
       position: absolute;
       color: #fff;
-      bottom: 20px;
+      bottom: 0px;
       left: 0;
 
 
@@ -66,6 +70,7 @@
         font-weight: bold;
         background: $news-red;
         display: inline-block;
+        float: left;
         padding: 4px 10px;
         margin: 0;
       }
@@ -73,11 +78,12 @@
 
       .slider-caption-copy {
         @include fs-textSans(1);
-        padding: 4px 10px;
+        padding: 2px 10px 6px 10px;
         display: inline-block;
         background: $news-red;
-        margin: 0;
-        position: relative;
+        float: left;
+        clear: left;
+        margin-top: -4px;
 
 //         &:before {
 //           content: "";
