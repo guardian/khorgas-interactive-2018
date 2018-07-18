@@ -1,17 +1,9 @@
-<div class="gv-block gv-page-width gv-carousel">
+<div class="gv-block gv-full-width gv-plus-left-margin">
+  <div id="carousel-wrapper" class="carousel-wrapper {{block.class}}">
+  <div id="carousel" class="carousel">
 
- <!--  <div class="swiper-overlay-container">
-
-
-  </div> -->
-
-
-   <div class="swiper-container gv-main-column carousel-container">
-    <div class="swiper-wrapper">
-
-
-       {{#each block.carouselSlides as carouselSlide}}
-      <div class="swiper-slide {{carouselSlide.class}}">
+    {{#each block.carouselSlides as carouselSlide}}
+      <div id="carousel-slide_{{carouselSlide.slideIndex}}" class="{{carouselSlide.class}}">
         <!-- {{#if gridBlock.block === "video"}}
           <Video block={{gridBlock}} serverside={{serverside}} controls="false" loop="true" header="false"></Video>
         {{else}} -->
@@ -24,19 +16,24 @@
                 </picture>
             </div>
         </div>
-        <div class="slider-caption">
-          <h3 class="slider-caption-heading">{{carouselSlide.captionHeading}}</h3>
-          <p class="slider-caption-copy">{{carouselSlide.captionCopy}}</p>
+        <div class="carousel-caption">
+          <h3 class="carousel-caption-heading">{{carouselSlide.captionHeading}}</h3>
+          <p class="carousel-caption-copy">{{carouselSlide.captionCopy}}</p>
         </div>
+
         <!-- {{/if}} -->
       </div>
     {{/each}}
 
-    </div>
-    <!-- Add Pagination -->
-    <div class="carousel-pagination swiper-pagination"></div>
   </div>
 
+  <div id="dots" class="dots">
+    {{#each block.carouselSlides as carouselSlide}}
+      <div id="dot_{{carouselSlide.slideIndex}}" class="dot"></div>
+    {{/each}}
+</div>
+
+  </div>
 </div>
 
 <script>

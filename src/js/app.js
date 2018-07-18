@@ -1,6 +1,7 @@
 import VideoPlayer from '../components/video/index.html'
 import dragscroll from 'dragscroll'
 import Siema from 'siema'
+import Swiper from 'swiper'
 
 
 //initialise video player
@@ -75,72 +76,106 @@ var shareFn = share('The tower next door: Life #InTheShadowOfGrenfell https://ww
 });
 
 
-// SLIDER CODE
-
-var ticking = false;
-var slider = document.getElementById("slider");
-var sliderInner = document.getElementById("slider-inner");
-var slidesWidth = sliderInner.getBoundingClientRect().width / 3;
-
-slider.addEventListener("scroll", function() {
-    if (!ticking) {
-        window.requestAnimationFrame(function() {
-
-            slidesWidth = sliderInner.getBoundingClientRect().width / 3;
-
-        if (slider.scrollLeft >= (slidesWidth)) {
-             
-           slider.scrollLeft = 0;
-          
-         }
-            ticking = false;
-        });
-    }
-    ticking = true;
-});
-
-// CAROUSEL CODE
-
-const carousel = new Siema({
-  selector: '.carousel',
-  duration: 300,
-  easing: 'ease-out',
-  startIndex: 0,
-  draggable: true,
-  multipleDrag: true,
-  threshold: 20,
-  loop: false,
-  rtl: false,
-  onInit: () => {},
-  onChange: () => { updateDots(); }
-});
-
-updateDots();
-
-function updateDots() {
+// SLIDER STUFF
 
 
-  [].slice.apply(document.querySelectorAll('.dot')).forEach(dot => {
-       dot.classList.remove("dot-highlight");
+var fastSpeed = 400;
+var slowSpeed = 14000;
+
+var swiper = new Swiper('.slider-container', {
+      slidesPerView: "auto",
+      centeredSlides: true,
+      spaceBetween: 0,
+      loop: true,
+      grabCursor: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false
+      },
+      speed: slowSpeed
     });
 
-  document.getElementById("dot_" + carousel.currentSlide).classList.add("dot-highlight");
 
-  var slideW = document.getElementById("carousel-slide_0").getBoundingClientRect().width;
-  var wrapperW = document.getElementById("carousel-wrapper").getBoundingClientRect().width;
+var i = 0;
 
 
-  var offsetWidth = ((wrapperW - slideW) / 2) + "px";
+swiper.forEach(swipe => {
+    var index = i;
+    swiper[index].on('touchStart', function(e) { onSliderTouchStart(index); });
+    swiper[index].on('touchEnd', function(e) { onSliderTouchEnd(index); });
+    swiper[index].on('slideChangeTransitionEnd', function(e) { onSliderTransitionEnd(index); });
+    i++;
+});
 
-  console.log(offsetWidth);
+
+function onSliderTransitionEnd(ind) {
+ swiper[ind].autoplay.start();
+ swiper[ind].params.speed = slowSpeed;
+}
+
+function onSliderTouchStart(ind) {
+ swiper[ind].autoplay.stop();
+ swiper[ind].params.speed = fastSpeed;
+}
+
+function onSliderTouchEnd(ind) {
+
+  var spd;
  
+  if (swiper[ind].touches.diff > 0) {
+     //swiper[ind].slideToClosest(300);
+    spd=450;
+    //swiper[ind].slideNext();
+  } else {
+    spd = 350;
+    swiper[ind].autoplay.start();
+    
+  }
+  swiper[ind].params.speed = spd;
+  swiper[ind].el.classList.add("ease");
+  //console.log(swiper[ind]);
+  
 
-
-  if (carousel.currentSlide != 0) {
-   document.getElementById("carousel").style.marginLeft = offsetWidth;
- } else {
-  document.getElementById("carousel").style.marginLeft="0";
- }
-
+  setTimeout(function(){ updateSliderTransitions(ind);}, (spd - 10));
 
 }
+
+function updateSliderTransitions(ind) {
+  //console.log("fired2");
+  swiper[ind].params.speed = slowSpeed;
+  swiper[ind].el.classList.remove("ease");
+  swiper[ind].autoplay.start();
+
+  //swiper[ind].el.querySelector(".swiper-wrapper").style.transitionDuration ="14000ms";
+
+
+//console.log(swiper[ind].autoplay.running);
+  //swiper[ind].autoplay.stop();
+  //swiper[ind].autoplay.start();
+  //swiper[ind].autoplay.start();
+  //swiper[ind].update();
+  // if (!swiper[ind].animating) {
+  //   swiper[ind].slideNext();
+  // }
+  //setTimeout(function(){ console.log("fired3");swiper[ind].autoplay.start();}, 100);
+}
+
+
+// CAROUSEL STUFF
+
+var carousel = new Swiper('.carousel-container', {
+      slidesPerView: "auto",
+      spaceBetween: 10,
+      loop: false,
+      grabCursor: true,
+      pagination: {
+        el: '.carousel-pagination',
+        clickable: true,
+      },
+      speed: 300
+    });
+

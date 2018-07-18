@@ -1,86 +1,93 @@
 .interactive-atom {
-  .carousel-wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    overflow: hidden;
 
-    margin-bottom: 24px;
+  .gv-carousel {
 
-    img, video {
-      min-width: 100%;
-      min-height: 100%;
-      object-position: 50% 50%;
-      object-fit: cover;
+  .swiper-pagination {
+    
+  }
+
+ .swiper-container {
+      width: 100%;
+      height: 500px;
+      margin-bottom: 20px;
+      overflow: visible!important;
+      padding-top: 20px;
+      padding-bottom: 50px;
+      @include mq(mobileLandscape) {
+            height: 640px;
+      }
+       @include mq(desktop) {
+            padding-top: 50px;
+            height: 740px;
+      }
+
     }
 
-    .visual-element--image, .visual-element--grid {
-      width: 100%;
+    .swiper-wrapper {
+      transition-timing-function: linear;
+      background: #fff;
 
-      .visual-image {
-        height: 100%;
-        width: 100%;
+      @include mq(leftCol) {
+            margin-left: -10px;
+      }
+      
+    }
+    .swiper-slide {
+      position: relative;
+      //text-align: center;
+      font-size: 18px;
+      //background: #fff;
+      /* Center slide text vertically */
+      // display: -webkit-box;
+      // display: -ms-flexbox;
+      // display: -webkit-flex;
+      // display: flex;
+      // -webkit-box-pack: center;
+      // -ms-flex-pack: center;
+      // -webkit-justify-content: center;
+      // justify-content: center;
+      // -webkit-box-align: center;
+      // -ms-flex-align: center;
+      // -webkit-align-items: center;
+      // align-items: center;
+      width: auto;
+      background: #c70000;
+      //width: 60%;
+       height: 100%;
+      width: 300px;
+
+       @include mq(mobileLandscape) {
+           width: 460px;
+           
+      }
+
+        @include mq(desktop) {
+           width: 540px;
+           
       }
     }
 
-    .visual-element--video {
-      margin-bottom: 0 !important;
+
+ .swiper-container {
+    img, video {
+      //min-width: 100%;
+      //min-height: 100%;
+      //object-position: 50% 50%;
+      //object-fit: cover;
     }
 
-  }
+   .visual-element--image {
+      //width: 100%;
+      width: 100%;
 
-  .carousel {
-  width: 310px;
-  height: 500px;
-  overflow: visible!important;
-  margin: 0;
-  //margin: 0 auto;
-  transition: margin 300ms;
-  transition-timing-function: ease-out;
-
-    @include mq(mobileLandscape) {
-          width: 70%;     
+      .visual-image {
+        //height: 100%;
+        width: 100%;
+        //width: 100%;
+      }
     }
 
-    @include mq(phablet) {
-               
-    }
-
-    @include mq(tablet) {
-               
-
-    }
-    @include mq(desktop) {
-               
-    }
-
-    @include mq(wide) {
-               
-    }
-
-
-
-
-
-
-
-
-
-
-  }
-
-
-    .carousel-slide {
-
-    position: relative;
-    flex-shrink: 0;
-    //height: 500px;
-    overflow: hidden;
-    width: calc(100% - 10px);
-    height: 500px;
-  background: #c70000;
-  color: #fff;
-
-    .carousel-caption {
+       .slider-caption {
 
       position: relative;
       color: #fff;
@@ -88,7 +95,7 @@
       left: 0;
 
 
-      .carousel-caption-heading {
+      .slider-caption-heading {
         font-family: $f-serif-headline;
       font-size: 18px;
       line-height: 20px;
@@ -98,7 +105,7 @@
       margin-top: -35px;
       }
 
-      .carousel-caption-copy {
+      .slider-caption-copy {
         font-family: $f-serif-text;
         font-size: 16px;
         line-height: 18px;
@@ -114,35 +121,9 @@
 
     }
 
-  }
+    }
 
-  .dots {
-  //display: block;
-  width: 100%;
-  text-align: center;
-  padding-top: 10px;
 
 }
-
-.dot {
-  width: 8px;
-  height: 8px;
-  background: #fff;
-  border-radius: 50%;
-  margin-left: 5px;
-  display: inline-block;
-  border: 1px solid #999;
-}
-
-.dot:nth-of-type(1) {
-margin-left: 0;
-}
-
-.dot-highlight {
-  background: #c70000;
-   border: 1px solid #c70000;
-}
-
-
 
 }

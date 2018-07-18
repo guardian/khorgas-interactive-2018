@@ -1,0 +1,148 @@
+.interactive-atom {
+  .carousel-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    overflow: hidden;
+
+    margin-bottom: 24px;
+
+    img, video {
+      min-width: 100%;
+      min-height: 100%;
+      object-position: 50% 50%;
+      object-fit: cover;
+    }
+
+    .visual-element--image, .visual-element--grid {
+      width: 100%;
+
+      .visual-image {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .visual-element--video {
+      margin-bottom: 0 !important;
+    }
+
+  }
+
+  .carousel {
+  width: 310px;
+  height: 500px;
+  overflow: visible!important;
+  margin: 0;
+  //margin: 0 auto;
+  transition: margin 300ms;
+  transition-timing-function: ease-out;
+
+    @include mq(mobileLandscape) {
+          width: 70%;     
+    }
+
+    @include mq(phablet) {
+               
+    }
+
+    @include mq(tablet) {
+               
+
+    }
+    @include mq(desktop) {
+               
+    }
+
+    @include mq(wide) {
+               
+    }
+
+
+
+
+
+
+
+
+
+
+  }
+
+
+    .carousel-slide {
+
+    position: relative;
+    flex-shrink: 0;
+    //height: 500px;
+    overflow: hidden;
+    width: calc(100% - 10px);
+    height: 500px;
+  background: #c70000;
+  color: #fff;
+
+    .carousel-caption {
+
+      position: relative;
+      color: #fff;
+      bottom: 0;
+      left: 0;
+
+
+      .carousel-caption-heading {
+        font-family: $f-serif-headline;
+      font-size: 18px;
+      line-height: 20px;
+      background:#c70000;
+      display: inline-block;
+  
+      margin-top: -35px;
+      }
+
+      .carousel-caption-copy {
+        font-family: $f-serif-text;
+        font-size: 16px;
+        line-height: 18px;
+        padding-bottom: 10px;
+        display: inline;
+       background:#c70000;
+
+        &:before {
+    content: "";
+    display: block;
+}
+      }
+
+    }
+
+  }
+
+  .dots {
+  //display: block;
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  margin-left: 5px;
+  display: inline-block;
+  border: 1px solid #999;
+}
+
+.dot:nth-of-type(1) {
+margin-left: 0;
+}
+
+.dot-highlight {
+  background: #c70000;
+   border: 1px solid #c70000;
+}
+
+
+
+}

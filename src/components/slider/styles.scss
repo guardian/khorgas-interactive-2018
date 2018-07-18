@@ -1,18 +1,52 @@
 .interactive-atom {
 
-  .slider-wrapper {
-    display: flex;
-    margin-bottom: 24px;
+  .gv-slider {
 
-    position: relative;
+  .swiper-pagination {
+    display: none;
+  }
+
+ .swiper-container {
       width: 100%;
-      /* allow for scrolling */
-      //overflow-x: auto!important;
-      overflow-x: hidden!important;
+      height: 550px;
+      margin-bottom: 20px;
 
-  /* make it smooth on iOS */
-  -webkit-overflow-scrolling: touch;
+      &.ease {
+        .swiper-wrapper {
+           transition-timing-function: ease-in-out!important;
+        }
+      }
+    }
 
+    .swiper-wrapper.linear {
+      transition-timing-function: linear;
+    }
+
+  
+    .swiper-slide {
+      position: relative;
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      width: auto;
+      //width: 60%;
+    }
+
+
+ .swiper-container {
     img, video {
       //min-width: 100%;
       height: 100%;
@@ -28,33 +62,6 @@
         height: 100%;
         //width: 100%;
       }
-    }
-
-    .slider-inner {
-   display: flex;
-   transform: translate3d(0, 0, 0);
-
-   &.run-animation {
-      animation: moveSlideshow 80s linear infinite;
-  }
-}
-
-.slider-outer {
-  display: flex;
-  width: auto;
-  overflow: hidden;
-}
-
-
-    .slide {
-
-    position: relative;
-    flex-shrink: 0;
-    height: 400px;
-    overflow: hidden;
-
-    @include mq(leftCol) {
-      height: 520px;
     }
 
     .slider-caption {
@@ -96,22 +103,9 @@
 
     }
 
-  }
+    }
 
-    // .visual-element--video {
-    //   margin-bottom: 0 !important;
-    // }
 
-  }
-
-  @keyframes moveSlideshow {
-0% {
-    -webkit-transform: translateX(0%);
-
-  }
-  100% {
-    -webkit-transform: translateX(-33.333333334%);
-  }
 }
 
 }
