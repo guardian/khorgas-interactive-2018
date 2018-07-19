@@ -42,7 +42,7 @@
     "sass-mq": "^3.3.1",
     "svelte": "^1.40.2",
     "svelte-loader": "^2.0.1",
-    "uglifyjs-webpack-plugin": "^0.4.6",
+    "uglifyjs-webpack-plugin": "^1.2.7",
     "vinyl-buffer": "^1.0.0",
     "vinyl-named": "^1.1.0",
     "vinyl-source-stream": "^1.1.0",
@@ -58,6 +58,7 @@
     "resolve-from": "^4.0.0",
     "siema": "^1.5.1",
     "swiper": "^4.3.3",
+    "uglify": "^0.1.5",
     "unfetch": "^3.0.0"
   }
 }

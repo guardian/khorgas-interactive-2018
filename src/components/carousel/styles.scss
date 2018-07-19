@@ -8,6 +8,9 @@
     background-color: #c70000;
     opacity: 0.8;
     top: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 32px;
     @include mq(desktop) {
       top: 380px;
     }
@@ -19,12 +22,14 @@
     &.swiper-button-prev {
       left: 20px;
       right: auto;
+      background-image:url("<%= path %>/assets/left-arrow.svg");
       //display: none;
     }
     &.swiper-button-next{
       //display: none;
       right: 20px;
       left: auto;
+      background-image:url("<%= path %>/assets/right-arrow.svg");
     }
   }
 
