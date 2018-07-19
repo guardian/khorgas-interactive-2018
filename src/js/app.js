@@ -1,6 +1,6 @@
 import VideoPlayer from '../components/video/index.html'
-import dragscroll from 'dragscroll'
-import Siema from 'siema'
+//import dragscroll from 'dragscroll'
+//import Siema from 'siema'
 import Swiper from 'swiper'
 
 
@@ -169,13 +169,61 @@ function updateSliderTransitions(ind) {
 
 var carousel = new Swiper('.carousel-container', {
       slidesPerView: "auto",
-      spaceBetween: 10,
+      spaceBetween: 20,
+      centeredSlides: true,
+      breakpoints: {
+        739: {
+        spaceBetween: 10,
+        centeredSlides: true,
+        slidesOffsetAfter: 0
+        }
+      },
       loop: false,
       grabCursor: true,
       pagination: {
         el: '.carousel-pagination',
         clickable: true,
       },
-      speed: 300
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      speed: 300,
+      slidesOffsetAfter: 80
     });
+
+carousel.on('slideChangeTransitionStart', function(e) { updateCarouselMargin(); });
+
+function updateCarouselMargin() {
+  //console.log(carousel.translate);
+
+  //var trans = carousel.translate + 200;
+
+  //carousel.setTranslate(trans);
+  //carousel.translate -=200;
+  //console.log(carousel.previousIndex);
+  // var el = document.querySelector(".swiper-margin-wrapper");
+  // if ( carousel.activeIndex == 0 && carousel.previousIndex == 1) {
+  //   //el.classList.remove("carousel-centered");
+  //   centerCarousel(false);
+  // } else if (carousel.activeIndex == 1 && carousel.previousIndex == 0) {
+  //   centerCarousel(true);
+  //   //carousel.params.centeredSlides = true;
+  //   //carousel.update();
+  //   //el.classList.add("carousel-centered");
+  // }
+}
+
+// function centerCarousel(bool) {
+//    var el = document.querySelector(".swiper-margin-wrapper");
+//   if (bool) {
+//     el.classList.add("carousel-centered");
+//     //setTimeout(function(){ carousel.params.centeredSlides = true;carousel.update(); }, 230);
+//     //setTimeout(function(){ el.classList.add("carousel-centered"); }, 1);
+//   } else {
+//     el.classList.remove("carousel-centered");
+//     //setTimeout(function(){ carousel.params.centeredSlides = false;carousel.update(); }, 230);
+//     //setTimeout(function(){ el.classList.remove("carousel-centered"); }, 1);
+//   }
+// }
 
