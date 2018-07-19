@@ -6,7 +6,7 @@
     background: #fff;
     border-radius: 50%;
     background-color: #c70000;
-    opacity: 0.8;
+    opacity: 0.7;
     top: 200px;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,14 +22,14 @@
     &.swiper-button-prev {
       left: 20px;
       right: auto;
-      background-image:url("<%= path %>/assets/left-arrow.svg");
+      background-image:url("<%= path %>/assets/left_arrow.svg");
       //display: none;
     }
     &.swiper-button-next{
       //display: none;
       right: 20px;
       left: auto;
-      background-image:url("<%= path %>/assets/right-arrow.svg");
+      background-image:url("<%= path %>/assets/right_arrow.svg");
     }
   }
 
