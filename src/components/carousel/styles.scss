@@ -1,8 +1,9 @@
 .interactive-atom {
 
   .swiper-button {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
+
     background: #fff;
     border-radius: 50%;
     background-color: #c70000;
@@ -10,7 +11,12 @@
     top: 200px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 32px;
+    background-size: 25px;
+     @include mq(mobileLandscape) {
+              width: 60px;
+              height: 60px;
+              background-size: 32px;
+      }
     @include mq(desktop) {
       top: 380px;
     }
@@ -20,16 +26,22 @@
       display: none;
     }
     &.swiper-button-prev {
-      left: 20px;
+      left: 10px;
       right: auto;
       background-image:url("<%= path %>/assets/left_arrow.svg");
+       @include mq(phabletSmall) {
+            left: 20px;
+      }
       //display: none;
     }
     &.swiper-button-next{
       //display: none;
-      right: 20px;
+      right: 10px;
       left: auto;
       background-image:url("<%= path %>/assets/right_arrow.svg");
+       @include mq(phabletSmall) {
+            right: 20px;
+      }
     }
   }
 
@@ -46,36 +58,6 @@
     
   }
 
-  .swiper-button {
-    width: 60px;
-    height: 60px;
-    background: #fff;
-    border-radius: 50%;
-    background-color: #c70000;
-    opacity: 0.8;
-    top: 200px;
-    @include mq(phabletSmall) {
-             top: 300px;
-      }
-    @include mq(desktop) {
-      top: 380px;
-    }
-
-
-    &.swiper-button-disabled {
-      display: none;
-    }
-    &.swiper-button-prev {
-      left: 20px;
-      right: auto;
-      //display: none;
-    }
-    &.swiper-button-next{
-      //display: none;
-      right: 20px;
-      left: auto;
-    }
-  }
 
   .swiper-margin-wrapper {
     margin-left: 0;
@@ -116,14 +98,33 @@
     .swiper-wrapper {
       transition-timing-function: ease-out;
       background: #fff;
+      margin-left: 0!important;
+      //transition: margin 150ms;
+    //transition-delay: 50ms;
+    //transition-timing-function: ease-in-out;
 
-       @include mq(phabletSmall) {
-            margin-left: -80px;
+      //  @include mq(mobileLandscape) {
+      //       margin-left: 20px!important;
+      // }
+
+
+       @include mq(phablet) {
+            margin-left: 20px!important;
       }
 
       @include mq(leftCol) {
-            margin-left: -50px;
+            margin-left: -10px!important;
       }
+
+      // &.swiper-centered {
+
+      //     @include mq(phabletSmall) {
+      //      margin-left: calc((100% - 460px) / 1)!important;
+      // }
+
+
+
+      // }
       
     }
     .swiper-slide {

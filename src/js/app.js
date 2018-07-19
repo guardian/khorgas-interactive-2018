@@ -170,9 +170,19 @@ function updateSliderTransitions(ind) {
 var carousel = new Swiper('.carousel-container', {
       slidesPerView: "auto",
       spaceBetween: 20,
-      centeredSlides: true,
+      centeredSlides: false,
       breakpoints: {
+        579: {
+        spaceBetween: 10,
+        centeredSlides: true,
+        slidesOffsetAfter: 0
+        },
         739: {
+        spaceBetween: 10,
+        centeredSlides: true,
+        slidesOffsetAfter: 0
+        },
+        979: {
         spaceBetween: 10,
         centeredSlides: true,
         slidesOffsetAfter: 0
