@@ -202,9 +202,39 @@ var carousel = new Swiper('.carousel-container', {
       slidesOffsetAfter: 80
     });
 
+var beginning = true;
+
 carousel.on('slideChangeTransitionStart', function(e) { updateCarouselMargin(); });
+carousel.on('reachBeginning', function(e) { beginning = true; });
 
 function updateCarouselMargin() {
+
+var trans;
+
+  var marginEl = document.querySelector(".swiper-dummy");
+
+ if ( carousel.activeIndex == 0 && isMobile()) {
+
+  var margin = marginEl.offsetWidth - marginEl.clientWidth; 
+console.log(margin);
+ trans = carousel.translate - marginEl.clientWidth + margin;
+ //console.log(marginEl.offsetWidth + "  " + marginEl.clientWidth);
+
+  carousel.setTranslate(trans);
+
+}
+
+if (beginning && carousel.previousIndex == 1) {
+  //console.log("BEGINNING");
+  // hide prevButton;
+  carousel.allowSlidePrev = false;
+} else {
+  carousel.allowSlidePrev = true;
+}
+
+beginning = false;
+
+
   //console.log(carousel.translate);
 
   //var trans = carousel.translate + 200;
@@ -236,4 +266,18 @@ function updateCarouselMargin() {
 //     //setTimeout(function(){ el.classList.remove("carousel-centered"); }, 1);
 //   }
 // }
+
+function isMobile() {
+    var dummy = document.querySelector(".swiper-dummy");
+    if (getStyle(dummy) == 'block') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function getStyle(element) {
+    return element.currentStyle ? element.currentStyle.display :
+        getComputedStyle(element, null).display;
+}
 
