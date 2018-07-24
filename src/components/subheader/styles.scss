@@ -17,6 +17,8 @@
 .gv-subheader {
   padding-left: 10px;
   padding-right: 10px;
+  position: relative;
+  z-index: 1;
   h2 {
     @include fs-titlepiece(3);
     color: $news-red;
@@ -27,10 +29,11 @@
     padding-bottom: 12px;
     @include mq(leftCol) {
         font-size: 38px;
-        line-height: 38px;
-        margin-bottom: -40px;
+        line-height: 44px;
+        margin-bottom: -51px;
     }
   }
+
 
 
   @include mq(mobileMedium) {
@@ -38,6 +41,45 @@
   }
 
 }
+
+// This could be and should be written better //
+
+    .gv-subheader-container:nth-of-type(3) {
+      @include mq(leftCol) {
+        h2 {
+          width: 140px;
+          margin-bottom: -95px;
+        }
+        object {
+          margin-top: 54px;
+        }
+      @include mq(wide) {
+        h2 {
+          width: 100%;
+          margin-bottom: -51px;
+        }
+        object {
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+  .gv-subheader-container:nth-of-type(22) {
+    @include mq(leftCol) {
+      h2 {
+        width: 140px;
+        margin-bottom: -95px;
+      }
+    @include mq(wide) {
+      h2 {
+        width: 100%;
+        margin-bottom: -51px;
+      }
+    }
+  }
+}
+
+
 
 .gv-subheader-container {
     position: relative;
