@@ -1,0 +1,117 @@
+.interactive-atom {
+
+  .gv-slider {
+
+  .swiper-pagination {
+    display: none;
+  }
+
+ .swiper-container {
+      width: 100%;
+      height: 320px;
+      margin-bottom: 28px;
+      @include mq(tablet) {
+        height: 420px;
+      }
+      @include mq(leftCol) {
+        height: 550px;
+      }
+
+      &.ease {
+        .swiper-wrapper {
+           transition-timing-function: ease-in-out!important;
+        }
+      }
+    }
+
+    .swiper-wrapper.linear {
+      transition-timing-function: linear;
+    }
+
+
+    .swiper-slide {
+      position: relative;
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      width: auto;
+      //width: 60%;
+    }
+
+
+ .swiper-container {
+    img, video {
+      //min-width: 100%;
+      height: 100%;
+      width: auto;
+      //object-position: 50% 50%;
+      //object-fit: cover;
+    }
+
+    .visual-element--image {
+      height: 100%;
+
+      .visual-image {
+        height: 100%;
+        //width: 100%;
+      }
+    }
+
+    .slider-caption {
+
+      position: absolute;
+      color: #fff;
+      bottom: 0px;
+      left: 0;
+
+
+      .slider-caption-heading {
+        @include fs-textSans(1);
+        font-weight: bold;
+        background: $news-red;
+        display: inline-block;
+        float: left;
+        padding: 2px 6px;
+        margin: 0;
+        margin-top: -4px;
+      }
+
+
+      .slider-caption-copy {
+        @include fs-textSans(1);
+        padding: 2px 6px 4px 6px;
+        display: inline-block;
+        background: $news-red;
+        float: left;
+        clear: left;
+        margin-top: -2px;
+
+//         &:before {
+//           content: "";
+//           display: inline-block;
+//           width: 0px;
+//           height: 0px;
+// }
+      }
+
+    }
+
+    }
+
+
+}
+
+}

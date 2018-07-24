@@ -1,0 +1,72 @@
+<div class="gv-block gv-full-width gv-slider">
+
+ <!--  <div class="swiper-overlay-container">
+
+
+  </div> -->
+
+
+   <div class="swiper-container slider-container">
+    <div class="swiper-wrapper linear">
+
+
+       {{#each block.slides as slide}}
+      <div class="swiper-slide {{slide.class}}">
+       {{#if slide.type === "video"}}
+          <div class='visual-element--image'>
+            <div class='visual-image'>
+               
+          <Video block={{slide}} serverside={{serverside}} controls="false" loop="true" header="false"></Video>
+        </div>
+      </div>
+                {{else}}
+                <div class='visual-element--image'>
+            <div class='visual-image'>
+                <picture>
+                    <source media="(min-width: 700px)" srcset="{{slide.desktopSrc}}">
+                    <source srcset="{{slide.mobileSrc}}">
+                    <img src="{{slide.desktopSrc}}" alt="">
+                </picture>
+            </div>
+        </div>
+        {{/if}}
+        <div class="slider-caption">
+          <h3 class="slider-caption-heading">{{slide.captionHeading}}</h3>
+          <p class="slider-caption-copy">{{slide.captionCopy}}</p>
+        </div>
+
+        <!-- {{/if}} -->
+      </div>
+    {{/each}}
+
+
+
+
+
+
+
+
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+</div>
+
+<script>
+const requireUncached = require('require-uncached');
+//const Image = requireUncached('../image/render.html');
+const Video = requireUncached('../video/index.html');
+
+export default {
+    oncreate() {
+
+        },
+        components:{
+          // Image: Image,
+          Video: Video
+        },
+
+}
+
+</script>
