@@ -102,7 +102,7 @@
 
 
   .swiper-pagination {
-
+//margin-left: 50px;
   }
 
 
@@ -229,8 +229,16 @@
 
   .carousel-pagination {
 
-    margin-left: -50px;
+    //margin-left: -50px;
     bottom: 0px;
+
+     @include mq(tablet) {
+           left: 40px;
+      }
+
+     @include mq(desktop) {
+           left: -60px;
+      }
 
 
 
