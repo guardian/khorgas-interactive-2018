@@ -205,7 +205,11 @@ var carousel = new Swiper('.carousel-container', {
 var beginning = true;
 
 carousel.on('slideChangeTransitionStart', function(e) { updateCarouselMargin(); });
-carousel.on('reachBeginning', function(e) { beginning = true; });
+//carousel.on('reachBeginning', function(e) { beginning = true; });
+
+
+carousel.slideTo(1, 10);
+carousel.slideTo(0, 10);
 
 function updateCarouselMargin() {
 
@@ -216,7 +220,7 @@ var trans;
  if ( carousel.activeIndex == 0 && isMobile()) {
 
   var margin = marginEl.offsetWidth - marginEl.clientWidth; 
-console.log(margin);
+//console.log(margin);
  trans = carousel.translate - marginEl.clientWidth + margin;
  //console.log(marginEl.offsetWidth + "  " + marginEl.clientWidth);
 
@@ -224,15 +228,18 @@ console.log(margin);
 
 }
 
-if (beginning && carousel.previousIndex == 1) {
-  //console.log("BEGINNING");
+if (carousel.activeIndex == 0) {
+  //console.log(carousel.params.navigation);
   // hide prevButton;
   carousel.allowSlidePrev = false;
+  carousel.navigation.prevEl.classList.add(carousel.params.navigation.disabledClass);
 } else {
   carousel.allowSlidePrev = true;
+  carousel.navigation.prevEl.classList.remove(carousel.params.navigation.disabledClass);
 }
 
-beginning = false;
+//beginning = false;
+
 
 
   //console.log(carousel.translate);
@@ -241,6 +248,7 @@ beginning = false;
 
   //carousel.setTranslate(trans);
   //carousel.translate -=200;
+  //console.log(carousel.getTranslate());
   //console.log(carousel.previousIndex);
   // var el = document.querySelector(".swiper-margin-wrapper");
   // if ( carousel.activeIndex == 0 && carousel.previousIndex == 1) {

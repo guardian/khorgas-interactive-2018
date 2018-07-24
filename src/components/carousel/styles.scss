@@ -82,11 +82,13 @@
     }
     @include mq(phabletSmall) {
         width: calc((100% - 460px) / 2);
-        border-left: 0px solid #fff;
+        border-left: 20px solid #fff;
     }
     @include mq(phablet) {
-        width: calc((100% - 460px) / 2);
-        border-left: 80px solid #fff;
+        border-left: 20px solid #fff;
+    }
+    @include mq(tablet) {
+        //border-left: 10px solid #fff;
     }
      @include mq(desktop) {
         width: calc((100% - 540px) / 2);
@@ -155,10 +157,16 @@
       //  @include mq(mobileLandscape) {
       //       margin-left: 20px!important;
       // }
+      // @include mq(mobileLandscape) {
+      //       margin-left: 0px!important;
+      // }
 
+       @include mq(tablet) {
+            margin-left: 40px!important;
+      }
 
-       @include mq(phablet) {
-            margin-left: 20px!important;
+      @include mq(desktop) {
+            margin-left: 0px!important;
       }
 
       @include mq(leftCol) {
