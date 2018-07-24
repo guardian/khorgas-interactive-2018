@@ -50,7 +50,7 @@
           width: 140px;
           margin-bottom: -95px;
         }
-        object {
+        object, img {
           margin-top: 54px;
         }
       @include mq(wide) {
@@ -58,7 +58,7 @@
           width: 100%;
           margin-bottom: -51px;
         }
-        object {
+        object, img {
           margin-top: 12px;
         }
       }
@@ -124,11 +124,11 @@
   top: 0px;
   padding-bottom: 6px;
 
-  object {
+  object, img {
     max-width: 50%;
   }
 
-  object.desktop {
+  object.desktop, img.desktop {
     display: none;
   }
 
@@ -142,18 +142,18 @@
     left: 10px;
     top: 64px;
 
-    object.mobile {
+    object.mobile, img.mobile {
       display: none;
     }
 
-    object.desktop {
+    object.desktop, img.desktop {
       display: block;
       max-width: 160px;
     }
 
   }
   @include mq($from: leftCol) {
-    object.desktop {
+    object.desktop, img.desktop {
       max-width: 150px;
     }
   }
@@ -161,7 +161,7 @@
   @include mq($from: wide) {
     left: 0px;
 
-    object.desktop {
+    object.desktop, img.desktop {
       max-width: 240px;
     }
 
