@@ -15,8 +15,8 @@
 
     .gv-page-width & {
         video {
-            width: 100%;
-            position: absolute;
+            // width: 100%;
+            // position: absolute;
         }
     }
 }
@@ -122,7 +122,7 @@
     &:hover {
     	cursor: pointer;
     }
-    
+
     .g-timer-btn-bg {
         fill-opacity: 1;
         fill: #ffbb00;

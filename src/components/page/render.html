@@ -22,6 +22,8 @@
     <Carousel block={{block}}></Carousel>
   {{elseif block.block.toLowerCase() === 'slider'}}
     <Slider block={{block}} serverside={{serverside}}></Slider>
+  {{elseif block.block.toLowerCase() === 'headergrid'}}
+    <HeaderGrid block={{block}} serverside={{serverside}}></HeaderGrid>
   {{/if}}
 {{/each}}
 
@@ -39,6 +41,7 @@ const Iframe = requireUncached('../iframe/render.html')
 const Share = requireUncached('../share/render.html')
 const Carousel = requireUncached('../carousel/render.html')
 const Slider = requireUncached('../slider/render.html')
+const HeaderGrid = requireUncached('../headergrid/render.html')
 
 export default {
     oncreate() {
@@ -55,7 +58,8 @@ export default {
           Iframe: Iframe,
           Share: Share,
           Carousel: Carousel,
-          Slider: Slider
+          Slider: Slider,
+          HeaderGrid: HeaderGrid
         }
 
 }

@@ -3,19 +3,27 @@
 .gv-header-wrapper {
     margin: 0 auto;
     overflow: hidden;
+    background-color: #eaeaea;
     @include mq(tablet) {
-        height: calc(100vw * (7/16));
+        height: 580px;
+    }
+
+    .video-wrapper {
+      padding-bottom: inherit;
+      height: inherit;
     }
 
     .visual-element--video {
         z-index: 0;
         background-color: #333;
-        height: 100%;
+        margin: 0 auto;
+        max-width: 620px;
+        margin-top: 180px;
 
         video {
-            min-height: 100%;
-            min-width: 100%;
-            object-fit: cover;
+            max-height: 100%;
+            max-width: 100%;
+            object-fit:contain;
             width: 100%;
         }
     }
@@ -95,43 +103,39 @@
 
 .gv-headline {
       @include fs-titlepiece(3);
-      position: absolute;
-      bottom: 60vh;
-      left:  0px;
+      // position: absolute;
+      // bottom: 60vh;
+      // left:  0px;
       font-size: 44px;
       line-height: 44px;
       z-index: 1000;
-      color: $news-red;
+      color: $neutral-7;
 
 
       @include mq(phablet) {
-          margin: 0 20px;
+          // margin: 0 20px;
       }
 
       @include mq(tablet) {
-          margin: 0 0 0 -40px;
+          // position: relative;
+          // margin: 0 auto;
           font-size: 36px;
           line-height: 36px;
-          bottom: calc(75vw * (7/16));
       }
       @include mq(desktop) {
-          margin: 0 0 0 -160px;
-          font-size: 50px;
-          line-height: 50px;
+          font-size: 64px;
+          line-height: 68px;
       }
 
       @include mq(leftCol) {
-          margin: 0 0 0 -200px;
-          bottom: calc(80vw * (7/16));
       }
 
       @include mq(wide) {
-          margin: 0 0 0 -210px;
       }
 
-      span {
-        padding-left: 126px;
-      }
+      // span {
+      //   padding-left: 126px;
+      // }
       // overflow: hidden;
       // height: 85vh;
       // width: auto;
@@ -153,56 +157,86 @@
       // }
     }
 
+    .gv-image-wrapper {
+      display: block;
+
+      image {
+        position:absolute;
+    top:0;
+    // animation-name: fade;
+    // animation-iteration-count: infinite;
+    // animation-duration: 12.5s;
+		// opacity: 0;
+		@include mq(mobile) {
+			position: absolute;
+			height: 240px;
+			top: 35px;
+			right: -10px;
+		}
+
+		@include mq(tablet) {
+			height: 380px;
+			right: -40px
+		}
+
+		@include mq(desktop) {
+			height: 500px;
+			top: 60px;
+			right: -50px;
+		}
+      }
+    }
+
 
 
 .gv-header-wrapper::before {}
 
-.gv-headline__image {
-    content: "";
-    position: absolute;
-    display: block;
-    background: url('<%= path %>/assets/header-logo-mobile.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 1001;
-    width: 106px;
-    height: 207px;
-    right: 56%;
-    top: calc(80vh * (7/16));
-
-    @include mq($from: mobileMedium) {
-        width: 126px;
-        height: 247px;
-    }
-
-    @include mq($from: mobileLandscape) {
-        right: 73%;
-    }
-
-
-    @include mq($from: tablet) {
-      background: url('<%= path %>/assets/header-logo.svg');
-      background-size: cover;
-      width: 196px;
-      height: 114px;
-      top: calc(12vw * (9/16));
-      right: 36.5%;
-    }
-
-    @include mq($from: desktop) {
-        width: 244px;
-        height: 140px;
-    }
-    @include mq($from: leftCol) {
-        width: 278px;
-        height: 161px;
-    }
-
-    @include mq($from: wide) {
-        width: 316px;
-        height: 183px;
-    }
-}
+// .gv-headline__image {
+//     content: "";
+//     position: absolute;
+//     display: block;
+//     background: url('<%= path %>/assets/header-logo-mobile.svg');
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     z-index: 1001;
+//     width: 106px;
+//     height: 207px;
+//     right: 56%;
+//     top: calc(80vh * (7/16));
+//
+//     @include mq($from: mobileMedium) {
+//         width: 126px;
+//         height: 247px;
+//     }
+//
+//     @include mq($from: mobileLandscape) {
+//         right: 73%;
+//     }
+//
+//
+//     @include mq($from: tablet) {
+//       background: url('<%= path %>/assets/header-logo.svg');
+//       background-size: cover;
+//       width: 196px;
+//       height: 114px;
+//       top: calc(12vw * (9/16));
+//       right: 36.5%;
+//     }
+//
+//     @include mq($from: desktop) {
+//         width: 244px;
+//         height: 140px;
+//     }
+//     @include mq($from: leftCol) {
+//         width: 278px;
+//         height: 161px;
+//     }
+//
+//     @include mq($from: wide) {
+//         width: 316px;
+//         height: 183px;
+//     }
+// }
 
 
 

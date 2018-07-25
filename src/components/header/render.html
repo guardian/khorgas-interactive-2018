@@ -1,16 +1,15 @@
-<div class="gv-header-wrapper">
-    <div class="int-desktop-only">
+<div class="gv-header-wrapper gv-block gv-page-width">
+    <div class="int-desktop-only gv-main-column">
         <Video block={{videoBlock}} serverside={{serverside}} controls="false" loop="true" header="true"></Video>
     </div>
     <div class="int-mobile-only">
         <Image block={{pictureBlock}} serverside={{serverside}}></Image>
     </div>
-    <div class="gv-image-wrapper"></div>
-    <div class="gv-header gv-page-width">
-      <div class="gv-headline gv-main-column">{{block.headlineLine1}} <br><span>{{block.headlineLine2}}</span></div>
+   
+    <div class="gv-header gv-main-column">
+      <div class="gv-headline">{{block.headlineLine1}} <br><span>{{block.headlineLine2}}</span></div>
       <h1 class='gv-headline-seo'>{{block.copy}}</h1>
-      <div class="gv-headline__image">
-    </div>
+      <!-- <div class="gv-headline__image"></div> -->
       </div>
 </div>
 <script>
