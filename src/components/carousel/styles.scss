@@ -1,5 +1,6 @@
 .interactive-atom {
 
+
   .swiper-button {
     width: 45px;
     height: 45px;
@@ -46,6 +47,8 @@
   }
 
   .gv-carousel {
+
+    clear: both;
 
     &::after {
       @include mq(leftCol) {
@@ -148,7 +151,7 @@
 
     .swiper-wrapper {
       transition-timing-function: ease-out;
-      background: #fff;
+      //background: #fff;
       margin-left: 0!important;
       //transition: margin 150ms;
     //transition-delay: 50ms;
