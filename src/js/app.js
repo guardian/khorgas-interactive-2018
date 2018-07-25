@@ -2,6 +2,10 @@ import VideoPlayer from '../components/video/index.html'
 //import dragscroll from 'dragscroll'
 //import Siema from 'siema'
 import Swiper from 'swiper'
+import detect from './detect'
+
+
+var isAndroidApp = ( detect.isAndroid() && window.location.origin === "file://" ) ? true : false;
 
 
 //initialise video player
@@ -73,6 +77,9 @@ var shareFn = share('The tower next door: Life #InTheShadowOfGrenfell https://ww
 [].slice.apply(document.querySelectorAll('.interactive-share')).forEach(shareEl => {
     var network = shareEl.getAttribute('data-network');
     shareEl.addEventListener('click',() => shareFn(network));
+
+
+
 });
 
 
@@ -261,6 +268,36 @@ if (carousel.activeIndex == 0) {
   //   //el.classList.add("carousel-centered");
   // }
 }
+
+// Fix android app horizontal scroll issues
+
+
+if(isAndroidApp && window.GuardianJSInterface.registerRelatedCardsTouch){
+
+i = 0;
+
+swiper.forEach(swipe => {
+    var index = i;
+    swiper[index].wrapperEl.addEventListener("touchstart", function(){
+            window.GuardianJSInterface.registerRelatedCardsTouch(true);
+        });
+    swiper[index].wrapperEl.addEventListener("touchend", function(){
+            window.GuardianJSInterface.registerRelatedCardsTouch(false);
+        });
+    i++;
+});
+
+
+
+        var sliderEl = document.querySelector('.carousel-container');
+
+        sliderEl.addEventListener("touchstart", function(){
+            window.GuardianJSInterface.registerRelatedCardsTouch(true);
+        });
+        sliderEl.addEventListener("touchend", function(){
+            window.GuardianJSInterface.registerRelatedCardsTouch(false);
+        });
+  }
 
 // function centerCarousel(bool) {
 //    var el = document.querySelector(".swiper-margin-wrapper");
