@@ -107,11 +107,15 @@
       // position: absolute;
       // bottom: 60vh;
       // left:  0px;
-      font-size: 44px;
-      line-height: 44px;
+      font-size: 34px;
+      line-height: 38px;
       z-index: 1000;
       color: $neutral-7;
       z-index: 1;
+      @include mq(mobileMedium) {
+        font-size: 40px;
+        line-height: 44px;
+      }
 
 
       @include mq(phablet) {
@@ -121,8 +125,8 @@
       @include mq(tablet) {
           // position: relative;
           // margin: 0 auto;
-          font-size: 36px;
-          line-height: 36px;
+          font-size: 50px;
+          line-height: 54px;
       }
       @include mq(desktop) {
           font-size: 64px;

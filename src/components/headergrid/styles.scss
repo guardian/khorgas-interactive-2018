@@ -10,7 +10,12 @@
     .grid-main {
       width: 348px;
       margin-left: 120px;
-      @include mq(wide) {
+      margin-top: 204px;
+      @include mq(mobileLandscape) {
+        margin-left: 110px;
+      }
+      @include mq(desktop) {
+        margin-left: 0px;
         width: 620px;
       }
     }
@@ -22,7 +27,7 @@
       position: absolute;
       width: 154px;
       height: 154px;
-      @include mq(wide) {
+      @include mq(desktop) {
         width: 220px;
         height: 220px;
       }
@@ -33,42 +38,61 @@
 
     .grid-2 {
       top: -78px;
-      left: -60px;
+      left: -198px;
+      @include mq(desktop) {
+          top: -56px;
+          left: -140px;
+      }
+      @include mq(wide) {
+        left: -60px;
+      }
     }
     .grid-3 {
       top: -40px;
-      left: -40px;
+      left: -34px;
+      @include mq(desktop) {
+          top: 184px;
+          left: -60px;
+      }
       @include mq(wide) {
-        top: 162px;
         left: 20px;
       }
     }
     .grid-4 {
       width: 228px;
-      top: -160px;
-      right: 60px;
-        @include mq(wide) {
-          width: 300px;
-          top: -200px;
-          left: 340px;
+      top: -148px;
+      left: 204px;
+      @include mq(desktop) {
+        width: 380px;
+        top: -248px;
+        left: 340px;
+      }
+      @include mq(wide) {
+        left: 420px;
       }
     }
     .grid-5 {
-      top: -160px;
+      top: -204px;
       left: 40px;
+      @include mq(desktop) {
+        top: -126px;
+        left: 820px;
+      }
       @include mq(wide) {
-        top: -156px;
-        right: 180px;
+        left: 900px;
       }
     }
     .grid-6 {
       width: 228px;
-      left: 385px;
+      left: 488px;
       top: 80px;
-      @include mq(wide) {
+      @include mq(desktop) {
         width: 486px;
-        right: -86px;
-        top: 80px;
+        left: 820px;
+        top: 114px;
+      }
+      @include mq(wide) {
+        left: 900px;
       }
     }
 
