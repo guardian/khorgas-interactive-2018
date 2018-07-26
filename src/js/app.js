@@ -93,6 +93,11 @@ var swiper = new Swiper('.slider-container', {
       spaceBetween: 0,
       loop: true,
       grabCursor: true,
+      breakpoints: {
+        579: {
+       centeredSlides: false
+        }
+      },
       pagination: {
         el: '.swiper-pagination',
         clickable: true,

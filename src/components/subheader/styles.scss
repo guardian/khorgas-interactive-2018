@@ -14,23 +14,24 @@
 }
 
 .gv-subheader {
-  @include mq(mobileLandscape) {
+  //@include mq(mobileLandscape) {
   
   float: left;
-   width: 50%;
-          max-width: 300px;
+   width: 40%;
+          max-width: 250px!important;
+
           &:after {
   content: "";
   display: table;
   clear: both;
-}
+//}
 }
 
 @include mq(desktop) {
   
   float: none;
    width: auto;
-          max-width: none;
+          max-width: none!important;
           &:after {
   content: "";
   display: none;
@@ -45,10 +46,10 @@
 
  
 
-   @include mq(mobileLandscape) {
+   //@include mq(mobileLandscape) {
   
-  margin-top: 75px!important;
-}
+  margin-top: 65px!important;
+//}
 
   @include mq(desktop) {
   
@@ -60,7 +61,8 @@
 
 .gv-subheader {
   padding-left: 10px;
-  padding-right: 10px;
+  //padding-right: 10px;
+  margin-right: 0px!important;
   position: relative;
   z-index: 1;
   @include mq(mobileLandscape) {
@@ -75,17 +77,28 @@
     font-weight: 600;
     padding-top: 16px;
     padding-bottom: 12px;
-    margin-left: 0;
+    margin-left: -10px;
+    width: 180%;
+    //position: absolute;
+    //top: 0;
+    //left: 10px;
+     //white-space: nowrap;
     @include mq(mobileLandscape) {
-         margin-left: 10px;
+         //margin-left: 10px;
     }
      @include mq(desktop) {
-         margin-left: 0;
+         //margin-left: 0;
+         //white-space: normal;
+         //position: static;
+        //top: auto;
+        //left: auto;
+        //width: 100px;
+
     }
     @include mq(leftCol) {
         font-size: 38px;
         line-height: 44px;
-        margin-bottom: -51px;
+        //margin-bottom: -20px;
     }
   }
 
@@ -97,13 +110,63 @@
 
 }
 
+
+
+
+// .gv-subheader-container:nth-of-type(4) {
+
+//     .gv-subheader-map {
+//          @include mq($from: desktop) {
+   
+//     top: 90px;
+    
+//     }
+//       @include mq($from: leftCol) {
+   
+//     top: 64px;
+    
+//     }
+//   }
+
+//   h2 {
+//      @include mq($from: leftCol) {
+//           white-space: nowrap;
+//         }
+//   }
+
+// }
+
+// .gv-subheader-container:nth-of-type(12) {
+
+// .gv-subheader {
+
+// width: auto;
+// max-width: none;
+
+//   h2 {
+//      position: relative;
+//      white-space: normal;
+//      left: 0;
+//      margin-bottom: 10px;
+
+//      @include mq($from: desktop) {
+   
+//     white-space: nowrap;
+    
+//     }
+//   }
+
+//   }
+
+// }
+
 // This could be and should be written better //
 
     .gv-subheader-container:nth-of-type(3) {
       @include mq(leftCol) {
         h2 {
           width: 140px;
-          margin-bottom: -95px;
+          //margin-bottom: -95px;
         }
         object, img {
           margin-top: 54px;
@@ -111,7 +174,7 @@
       @include mq(wide) {
         h2 {
           width: 100%;
-          margin-bottom: -51px;
+          //margin-bottom: -51px;
         }
         object, img {
           margin-top: 12px;
@@ -123,12 +186,12 @@
     @include mq(leftCol) {
       h2 {
         width: 140px;
-        margin-bottom: -95px;
+        //margin-bottom: -95px;
       }
     @include mq(wide) {
       h2 {
         width: 100%;
-        margin-bottom: -51px;
+        //margin-bottom: -51px;
       }
     }
   }
@@ -178,13 +241,16 @@
   position: relative;
   top: 0px;
   padding-bottom: 6px;
+  margin-left: -10px;
+
+  //padding-top: 70px;
 
   object, img {
-    max-width: 50%;
+    max-width: 90%;
 
-     @include mq(mobileLandscape) {
-         max-width: 90%;
-  }
+  //    @include mq(mobileLandscape) {
+  //        max-width: 90%;
+  // }
   }
 
   object.desktop, img.desktop {
@@ -198,8 +264,10 @@
 
   @include mq($from: desktop) {
     position: absolute;
-    left: 10px;
-    top: 64px;
+    left: 0px;
+    top: 20px;
+    padding-top: 0;
+    margin-left: -170px;
 
     object.mobile, img.mobile {
       display: none;
@@ -214,11 +282,14 @@
   @include mq($from: leftCol) {
     object.desktop, img.desktop {
       max-width: 150px;
+
     }
+
   }
 
   @include mq($from: wide) {
     left: 0px;
+     margin-left: -260px;
 
     object.desktop, img.desktop {
       max-width: 240px;
