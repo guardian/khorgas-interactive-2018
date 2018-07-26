@@ -61,9 +61,9 @@ function share(title, shareURL, fbImg, twImg, hashTag) {
         if (network === 'twitter') {
             shareWindow = twitterBaseUrl + encodeURIComponent(twitterMessage + ' ') + shareURL;
         } else if (network === 'facebook') {
-            shareWindow = facebookBaseUrl + 'https://www.theguardian.com/inequality/ng-interactive/2017/nov/18/life-shadow-grenfell-tower-next-door';
+            shareWindow = facebookBaseUrl + 'https://gu.com/p/92cfc';
         } else if (network === 'email') {
-            shareWindow = 'mailto:?subject=' + encodeURIComponent(title) + '&body=' + 'https://www.theguardian.com/inequality/ng-interactive/2017/nov/18/life-shadow-grenfell-tower-next-door';
+            shareWindow = 'mailto:?subject=' + encodeURIComponent(title) + '&body=' + 'https://gu.com/p/92cfc';
         } else if (network === 'google') {
             shareWindow = googleBaseUrl + '';
         }
@@ -73,12 +73,10 @@ function share(title, shareURL, fbImg, twImg, hashTag) {
 }
 
 
-var shareFn = share('The tower next door: Life #InTheShadowOfGrenfell https://www.theguardian.com/inequality/ng-interactive/2017/nov/18/life-shadow-grenfell-tower-next-door', 'https://t.co/MJ8I1aLw8n', '');
+var shareFn = share('Journey along the New Silk Road', 'https://gu.com/p/92cfc', '');
 [].slice.apply(document.querySelectorAll('.interactive-share')).forEach(shareEl => {
     var network = shareEl.getAttribute('data-network');
     shareEl.addEventListener('click',() => shareFn(network));
-
-
 
 });
 
