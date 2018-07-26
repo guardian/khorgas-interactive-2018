@@ -3,7 +3,8 @@
 .gv-header-wrapper {
     margin: 0 auto;
     overflow: hidden;
-    background-color: #eaeaea;
+    position: relative;
+    // background-color: #eaeaea;
     @include mq(tablet) {
         height: 580px;
     }
@@ -110,6 +111,7 @@
       line-height: 44px;
       z-index: 1000;
       color: $neutral-7;
+      z-index: 1;
 
 
       @include mq(phablet) {

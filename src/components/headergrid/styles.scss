@@ -8,18 +8,68 @@
   .header-grid-wrapper {
 
     .grid-main {
-      width: 620px;
+      width: 348px;
+      margin-left: 120px;
+      @include mq(wide) {
+        width: 620px;
+      }
     }
     .visual-element--image {
       margin-left: inherit;
+      display: block;
+    }
+    .grid-portrait {
       position: absolute;
-      width: 220px;
-      height: 220px;
+      width: 154px;
+      height: 154px;
+      @include mq(wide) {
+        width: 220px;
+        height: 220px;
+      }
+    }
+    .grid-landscape {
+      position: absolute;
     }
 
     .grid-2 {
-      top: 0px;
-      left: 0px;
+      top: -78px;
+      left: -60px;
+    }
+    .grid-3 {
+      top: -40px;
+      left: -40px;
+      @include mq(wide) {
+        top: 162px;
+        left: 20px;
+      }
+    }
+    .grid-4 {
+      width: 228px;
+      top: -160px;
+      right: 60px;
+        @include mq(wide) {
+          width: 300px;
+          top: -200px;
+          left: 340px;
+      }
+    }
+    .grid-5 {
+      top: -160px;
+      left: 40px;
+      @include mq(wide) {
+        top: -156px;
+        right: 180px;
+      }
+    }
+    .grid-6 {
+      width: 228px;
+      left: 385px;
+      top: 80px;
+      @include mq(wide) {
+        width: 486px;
+        right: -86px;
+        top: 80px;
+      }
     }
 
     .visual-element--video {
