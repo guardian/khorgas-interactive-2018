@@ -8,10 +8,15 @@
     font-style: italic;
     padding-top: 6px;
     padding-bottom: 12px;
+    max-width: 95%;
+    @include mq(mobileMedium) {
+      max-width: 90%;
+    }
     @include mq(leftCol) {
       padding-bottom: 32px;
       font-size: 22px;
       line-height: 26px;
+      max-width: 90%;
   }
 }
 }
