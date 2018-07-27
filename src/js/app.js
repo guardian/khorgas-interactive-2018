@@ -73,7 +73,7 @@ function share(title, shareURL, fbImg, twImg, hashTag) {
 }
 
 
-var shareFn = share('Journey along the New Silk Road', 'https://gu.com/p/92cfc', '');
+var shareFn = share('Follow the New Silk Road', 'https://gu.com/p/92cfc', '');
 [].slice.apply(document.querySelectorAll('.interactive-share')).forEach(shareEl => {
     var network = shareEl.getAttribute('data-network');
     shareEl.addEventListener('click',() => shareFn(network));
@@ -135,7 +135,7 @@ function onSliderTouchStart(ind) {
 function onSliderTouchEnd(ind) {
 
   var spd;
- 
+
   if (swiper[ind].touches.diff > 0) {
      //swiper[ind].slideToClosest(300);
     spd=450;
@@ -143,12 +143,12 @@ function onSliderTouchEnd(ind) {
   } else {
     spd = 350;
     swiper[ind].autoplay.start();
-    
+
   }
   swiper[ind].params.speed = spd;
   swiper[ind].el.classList.add("ease");
   //console.log(swiper[ind]);
-  
+
 
   setTimeout(function(){ updateSliderTransitions(ind);}, (spd - 10));
 
@@ -229,7 +229,7 @@ var trans;
 
  if ( carousel.activeIndex == 0 && isMobile()) {
 
-  var margin = marginEl.offsetWidth - marginEl.clientWidth; 
+  var margin = marginEl.offsetWidth - marginEl.clientWidth;
 //console.log(margin);
  trans = carousel.translate - marginEl.clientWidth + margin;
  //console.log(marginEl.offsetWidth + "  " + marginEl.clientWidth);
@@ -328,4 +328,3 @@ function getStyle(element) {
     return element.currentStyle ? element.currentStyle.display :
         getComputedStyle(element, null).display;
 }
-
