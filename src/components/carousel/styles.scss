@@ -9,7 +9,7 @@
     border-radius: 50%;
     background-color: #c70000;
     opacity: 0.7;
-    top: 200px;
+    top: 280px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 25px;
@@ -18,8 +18,12 @@
               height: 60px;
               background-size: 32px;
       }
+      @include mq(phabletSmall) {
+            top: 340px;
+
+      }
     @include mq(desktop) {
-      top: 380px;
+      top: 340px;
     }
 
 
@@ -77,8 +81,11 @@
      .swiper-dummy {
       display: block;
     position: absolute;
-    width: calc((100% - 300px) / 2);
+    width: calc((100% - 280px) / 2);
      border-left: 10px solid #fff;
+      @include mq(mobilePlus) {
+        width: calc((100% - 300px) / 2);
+      }
 
      @include mq(mobileLandscape) {
         border-left: 20px solid #fff;
@@ -130,11 +137,15 @@
   //}
 
  .swiper-container {
-      height: 502px;
+      height: 475px;
       margin-bottom: 20px;
       overflow: visible!important;
       padding-top: 0px;
       padding-bottom: 50px;
+
+      @include mq(mobilePlus) {
+           height: 502px;
+      }
 
 
       @include mq(phabletSmall) {
@@ -209,7 +220,12 @@
       // background: #c70000;
       //width: 60%;
        height: 100%;
-      width: 300px;
+      width: 280px;
+
+      @include mq(mobilePlus) {
+           width: 300px;
+
+      }
 
        @include mq(phabletSmall) {
            width: 460px;
