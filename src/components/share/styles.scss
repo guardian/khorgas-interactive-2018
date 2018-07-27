@@ -9,8 +9,13 @@
     padding-top: 6px;
     padding-bottom: 12px;
     max-width: 95%;
+    padding-left: 10px;
+    margin-top: 46px;
     @include mq(mobileMedium) {
       max-width: 90%;
+    }
+    @include mq(tablet) {
+      padding-left: 0px;
     }
     @include mq(leftCol) {
       padding-bottom: 32px;
@@ -19,7 +24,16 @@
       max-width: 90%;
       margin-top: 40px;
   }
+  &::before {
+      content:'';
+      border-left: 1px solid $neutral-86;
+      display: block;
+      position: absolute;
+      left: 10px;
+      height: calc(100%-50px);
+  }
 }
+
 }
 
 .gv-meta-container {

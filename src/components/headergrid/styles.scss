@@ -112,24 +112,65 @@
     //     }
     // }
 
-
-    svg {
-      position: absolute;
-      display: none;
-
-      @include mq(leftCol) {
+    // Animation
+    .header-svg-mobile {
+      svg {
+        position: absolute;
         display: block;
-        top: -227px;
-        left: 76px;
+        z-index: 10000;
+        left: -30px;
+        bottom: -185px;
+        @include mq(mobileMedium) {
+        bottom: -195px;
+        left: 5px;
+        }
+        @include mq(mobileLandscape) {
+        left: 15px;
+        }
+        @include mq(tablet) {
+          display: none;
+        }
       }
-      @include mq(wide) {
-        top: -227px;
-        left: 156px;
+    }
+
+    .header-svg-tablet {
+      svg {
+        position: absolute;
+        display: none;
+        z-index: 10000;
+        @include mq(tablet) {
+          display: block;
+          bottom: -213px;
+          left: 5px;
+        }
+        @include mq(desktop) {
+          display: none;
+        }
+        @include mq(leftCol) {
+          display: none;
+        }
+      }
+    }
+
+    .header-svg-desktop {
+      svg {
+        position: absolute;
+        display: none;
+        z-index: 10000;
+        @include mq(desktop) {
+          display: block;
+          top: -227px;
+          left: 76px;
+        }
+        @include mq(wide) {
+          top: -227px;
+          left: 156px;
+        }
       }
     }
 
     .path {
-      z-index: 10000;
+
       stroke-dasharray: 2000;
       stroke-dashoffset: 2000;
       animation: dash 10s linear forwards;
