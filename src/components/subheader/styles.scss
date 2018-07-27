@@ -15,7 +15,7 @@
 
 .gv-subheader {
   //@include mq(mobileLandscape) {
-  
+
   float: left;
    width: 40%;
           max-width: 250px!important;
@@ -28,7 +28,7 @@
 }
 
 @include mq(desktop) {
-  
+
   float: none;
    width: auto;
           max-width: none!important;
@@ -44,15 +44,15 @@
 
 .gv-subheader-container + .gv-copy {
 
- 
+
 
    //@include mq(mobileLandscape) {
-  
+
   margin-top: 65px!important;
 //}
 
   @include mq(desktop) {
-  
+
  margin-top: 0!important;
 }
 
@@ -66,8 +66,8 @@
   position: relative;
   z-index: 1;
   @include mq(mobileLandscape) {
-    
-         
+
+
   }
   h2 {
     @include fs-titlepiece(3);
@@ -118,14 +118,14 @@
 
 //     .gv-subheader-map {
 //          @include mq($from: desktop) {
-   
+
 //     top: 90px;
-    
+
 //     }
 //       @include mq($from: leftCol) {
-   
+
 //     top: 64px;
-    
+
 //     }
 //   }
 
@@ -151,9 +151,9 @@
 //      margin-bottom: 10px;
 
 //      @include mq($from: desktop) {
-   
+
 //     white-space: nowrap;
-    
+
 //     }
 //   }
 
@@ -236,6 +236,21 @@
       padding-left: 0px;
       padding-right: 0px;
     }
+}
+
+.gv-subheader-marker {
+
+  img {
+    position: absolute;
+    left: -10px;
+    top: 12px;
+    @include mq(leftCol) {
+    position: absolute;
+    left: -16px;
+    top: -36px;
+    }
+  }
+
 }
 
 .gv-subheader-map {
