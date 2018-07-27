@@ -24,11 +24,12 @@
                 </picture>
             </div>
         </div>
+         {{#if slide.captionHeading != undefined}}
         <div class="slider-caption">
           <h3 class="slider-caption-heading">{{slide.captionHeading}}</h3>
           <p class="slider-caption-copy">{{slide.captionCopy}}</p>
         </div>
-
+        {{/if}}
         <!-- {{/if}} -->
       </div>
     {{/each}}
