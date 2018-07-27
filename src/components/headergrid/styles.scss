@@ -9,13 +9,13 @@
 
     .grid-main {
       width: 348px;
-      margin-left: 120px;
+      padding-left: 120px;
       margin-top: 204px;
       @include mq(mobileLandscape) {
-        margin-left: 110px;
+        padding-left: 110px;
       }
       @include mq(desktop) {
-        margin-left: 0px;
+        padding-left: 0px;
         width: 620px;
       }
     }
@@ -96,21 +96,51 @@
       }
     }
 
-    .visual-element--video {
-        z-index: 0;
-        background-color: #333;
-        margin: 0 auto;
-        max-width: 620px;
-        margin-top: 180px;
-        border: none;
+    // .visual-image {
+    //     z-index: 0;
+    //     background-color: #333;
+    //     margin: 0 auto;
+    //     max-width: 620px;
+    //     margin-top: 180px;
+    //     border: none;
+    //
+    //     picture {
+    //         max-height: 100%;
+    //         max-width: 100%;
+    //         object-fit:contain;
+    //         width: 100%;
+    //     }
+    // }
 
-        video {
-            max-height: 100%;
-            max-width: 100%;
-            object-fit:contain;
-            width: 100%;
-        }
+
+    svg {
+      position: absolute;
+      display: none;
+
+      @include mq(leftCol) {
+        display: block;
+        top: -227px;
+        left: 76px;
+      }
+      @include mq(wide) {
+        top: -227px;
+        left: 156px;
+      }
     }
+
+    .path {
+      z-index: 10000;
+      stroke-dasharray: 2000;
+      stroke-dashoffset: 2000;
+      animation: dash 10s linear forwards;
+      animation-delay: 2s;
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
 
 
 
