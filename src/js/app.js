@@ -207,7 +207,7 @@ var carousel = new Swiper('.carousel-container', {
         prevEl: '.swiper-button-prev',
       },
       speed: 300,
-      slidesOffsetAfter: 120
+      slidesOffsetAfter: 80
     });
 
 var beginning = true;
