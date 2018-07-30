@@ -112,7 +112,6 @@ var swiper = new Swiper('.slider-container', {
 
 var i = 0;
 
-
 swiper.forEach(swipe => {
     var index = i;
     swiper[index].on('touchStart', function(e) { onSliderTouchStart(index); });
@@ -120,7 +119,6 @@ swiper.forEach(swipe => {
     swiper[index].on('slideChangeTransitionEnd', function(e) { onSliderTransitionEnd(index); });
     i++;
 });
-
 
 function onSliderTransitionEnd(ind) {
  swiper[ind].autoplay.start();
@@ -209,7 +207,7 @@ var carousel = new Swiper('.carousel-container', {
         prevEl: '.swiper-button-prev',
       },
       speed: 300,
-      slidesOffsetAfter: 80
+      slidesOffsetAfter: 120
     });
 
 var beginning = true;
