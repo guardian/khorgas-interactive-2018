@@ -93,6 +93,7 @@ var swiper = new Swiper('.slider-container', {
       spaceBetween: 0,
       loop: true,
       grabCursor: true,
+      roundLengths: true,
       breakpoints: {
         579: {
        centeredSlides: false
