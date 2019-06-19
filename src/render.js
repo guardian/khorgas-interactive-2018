@@ -8,7 +8,8 @@ const Page = requireUncached('../src/components/page/render.html')
 export async function render() {
     const data = await rp({
         //uri: 'https://interactive.guim.co.uk/docsdata-test/1P-6YwejZEA68ZzJVsJV0_jWJL-7uYOwEzFRi_UTSdfU.json',
-        uri: 'https://interactive.guim.co.uk/docsdata-test/1pAzeqyyGTs9wjz0nVj9Cz0LKeTlLU2OhJwYLB4Z9XXY.json',
+        // uri: 'https://interactive.guim.co.uk/docsdata-test/1pAzeqyyGTs9wjz0nVj9Cz0LKeTlLU2OhJwYLB4Z9XXY.json',
+        uri: 'https://interactive.guim.co.uk/docsdata/19LICrzTF3BhjhInB5PinMh0lHSfaeX7Mbj5giWMpluQ.json',
         json: true
     });
 
