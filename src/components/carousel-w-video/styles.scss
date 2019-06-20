@@ -1,0 +1,44 @@
+.interactive-atom {
+
+
+// OVERRIDES
+
+
+.gv-vid-carousel {
+
+  .swiper-container {
+    height: 420px;
+    // margin-bottom: 20px;
+    // overflow: visible!important;
+    // padding-top: 0px;
+    // padding-bottom: 50px;
+
+    @include mq(mobilePlus) {
+         height: 440px;
+    }
+
+
+    @include mq(phabletSmall) {
+          height: 550px;
+    }
+     @include mq(desktop) {
+          height: 610px;
+    }
+    @include mq(leftCol) {
+        //  padding-top: 5px;
+   }
+
+  }
+
+
+
+    video {
+    width: 100%    !important;
+    height: auto   !important;
+    background: #000;
+    }
+  }
+
+}
+
+

@@ -1,0 +1,70 @@
+<div class="gv-block gv-full-width">
+  <div class="swiper-button swiper-button-next"></div>
+  <div class="swiper-button swiper-button-prev"></div>
+</div>
+
+<div id="gv-vid-carousel-1" class="gv-block gv-page-width gv-carousel gv-vid-carousel">
+
+ <div class="swiper-dummy"></div>
+
+<!-- <div class="swiper-margin-wrapper"> -->
+   <div class="swiper-container gv-main-column carousel-container">
+
+    <div class="swiper-wrapper">
+
+
+       {{#each block.carouselSlides as carouselSlide}}
+      <div class="swiper-slide {{carouselSlide.class}}">
+        <!-- {{#if gridBlock.block === "video"}}
+          <Video block={{gridBlock}} serverside={{serverside}} controls="false" loop="true" header="false"></Video>
+        {{else}} -->
+          <div class='visual-element--vid'>
+            <!-- <div class='visual-image'>
+                <picture>
+                    <source media="(min-width: 700px)" srcset="{{carouselSlide.desktopSrc}}">
+                    <source srcset="{{carouselSlide.mobileSrc}}">
+                    <img src="{{carouselSlide.desktopSrc}}" alt="">
+                </picture>
+            </div> -->
+            
+            <video class="carousel-video" loop="true" header="false" poster="<%= path %>/assets/video/{{carouselSlide.posterSrc}}" muted >
+              <source src="<%= path %>/assets/video/{{carouselSlide.videoSrc}}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="carousel-caption">
+          <h3 class="carousel-caption-heading">{{carouselSlide.captionHeading}}</h3>
+          <p class="carousel-caption-copy">{{carouselSlide.captionCopy}}</p>
+        </div>
+        <!-- {{/if}} -->
+      </div>
+    {{/each}}
+
+    </div>
+
+    <!-- Add Arrows -->
+   <!--  <div class="swiper-button swiper-button-next"></div>
+    <div class="swiper-button swiper-button-prev"></div> -->
+    <!-- Add Pagination -->
+    <div class="carousel-pagination swiper-pagination"></div>
+  </div>
+<!-- </div> -->
+</div>
+
+<script>
+// const requireUncached = require('require-uncached');
+// const Image = requireUncached('../image/render.html');
+// const Video = requireUncached('../video/index.html');
+
+export default {
+    oncreate() {
+
+        },
+        components:{
+          // Image: Image,
+          // Video: Video
+        },
+
+}
+
+</script>

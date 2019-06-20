@@ -20,6 +20,8 @@
     <YouTube block={{block}} serverside={{serverside}}></YouTube>
   {{elseif block.block.toLowerCase() === 'carousel'}}
     <Carousel block={{block}}></Carousel>
+  {{elseif block.block.toLowerCase() === 'vidcarousel'}}
+    <VidCarousel block={{block}}></VidCarousel>
   {{elseif block.block.toLowerCase() === 'slider'}}
     <Slider block={{block}} serverside={{serverside}}></Slider>
   {{elseif block.block.toLowerCase() === 'headergrid'}}
@@ -40,6 +42,7 @@ const Subheader = requireUncached('../subheader/render.html')
 const Iframe = requireUncached('../iframe/render.html')
 const Share = requireUncached('../share/render.html')
 const Carousel = requireUncached('../carousel/render.html')
+const VidCarousel = requireUncached('../carousel-w-video/render.html')
 const Slider = requireUncached('../slider/render.html')
 const HeaderGrid = requireUncached('../headergrid/render.html')
 
@@ -58,6 +61,7 @@ export default {
           Iframe: Iframe,
           Share: Share,
           Carousel: Carousel,
+          VidCarousel: VidCarousel,
           Slider: Slider,
           HeaderGrid: HeaderGrid
         }

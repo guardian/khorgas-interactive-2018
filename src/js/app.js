@@ -214,11 +214,38 @@ var carousel = new Swiper('.carousel-container', {
 var beginning = true;
 
 carousel.on('slideChangeTransitionStart', function(e) { updateCarouselMargin(); });
+carousel.on('slideChangeTransitionEnd', function(e) { playVid(); });
 //carousel.on('reachBeginning', function(e) { beginning = true; });
 
 
 carousel.slideTo(1, 10);
 carousel.slideTo(0, 10);
+
+var firstSlide = carousel.slides[0];
+
+  var vid = firstSlide.getElementsByTagName('video');
+  vid[0].play();
+
+
+// vid[0].pause();
+// vid[0].currentTime = 0;
+// var nopromise = {
+//    catch : new Function()
+// };
+// (vid[0].play() || nopromise).catch(function(){}); ;
+// vid[0].pause();
+
+// setTimeout(function(){ startFirstVideo(carousel);}, 1000);
+
+// function startFirstVideo( carousel ) {
+//   var firstSlide = carousel.slides[0];
+
+//   var vid = firstSlide.getElementsByTagName('video');
+  
+//   var media = vid[0];
+  
+
+// }
 
 function updateCarouselMargin() {
 
@@ -246,6 +273,11 @@ if (carousel.activeIndex == 0) {
   carousel.allowSlidePrev = true;
   carousel.navigation.prevEl.classList.remove(carousel.params.navigation.disabledClass);
 }
+
+
+// play vid
+
+  
 
 //beginning = false;
 
@@ -314,6 +346,45 @@ swiper.forEach(swipe => {
 //   }
 // }
 
+function playVid() {
+  var slides = carousel.slides, slide, vid;
+
+  //console.log(slides.length);
+
+  for (var i = 0; i < slides.length; i++) {
+
+    slide = slides[i];
+
+    vid = slide.getElementsByTagName('video');
+
+    //var bullets = document.querySelectorAll(".swiper-pagination-bullet");
+
+    var carouselEl = document.getElementById("gv-vid-carousel-1");
+    var bullets = [].slice.apply(carouselEl.querySelectorAll(".swiper-pagination-bullet"));
+
+    //console.log(bullets.length);
+
+    var vidIndex = 0;
+
+    for (var ii = 0; ii < bullets.length; ii++) {
+
+      //console.log("vidindex=" + ii);
+      if (hasClass(bullets[ii], "swiper-pagination-bullet-active")) {
+        vidIndex = ii;
+
+      }
+    }
+
+
+    if (vid[0] != undefined && i != vidIndex) {
+      vid[0].pause();
+    } else {
+      vid[0].play();
+    }
+
+  }
+}
+
 function isMobile() {
     var dummy = document.querySelector(".swiper-dummy");
     if (getStyle(dummy) == 'block') {
@@ -326,4 +397,8 @@ function isMobile() {
 function getStyle(element) {
     return element.currentStyle ? element.currentStyle.display :
         getComputedStyle(element, null).display;
+}
+
+function hasClass(element, className) {
+  return (' ' + element.className + ' ').indexOf(' ' + className+ ' ') > -1;
 }
