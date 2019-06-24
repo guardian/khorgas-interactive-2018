@@ -26,14 +26,15 @@
                     <img src="{{carouselSlide.desktopSrc}}" alt="">
                 </picture>
             </div> -->
-            
+
             <video class="carousel-video" loop="true" header="false" poster="<%= path %>/assets/video/{{carouselSlide.posterSrc}}" muted >
               <source src="<%= path %>/assets/video/{{carouselSlide.videoSrc}}" type="video/mp4">
               Your browser does not support the video tag.
             </video>
         </div>
         <div class="carousel-caption">
-          <h3 class="carousel-caption-heading">{{carouselSlide.captionHeading}}</h3>
+          <h3 class="carousel-caption-firstname"><span>{{carouselSlide.captionFirstname}}</span></h3>
+          <h3 class="carousel-caption-lastname"><span>{{carouselSlide.captionLastname}}</span></h3>
           <p class="carousel-caption-copy">{{carouselSlide.captionCopy}}</p>
         </div>
         <!-- {{/if}} -->
