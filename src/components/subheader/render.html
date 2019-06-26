@@ -1,6 +1,8 @@
 <div class="gv-block gv-page-width gv-subheader-container {{block.class}}">
   <div class="gv-subheader gv-main-column">
+    {{#if block.copy != undefined}}
     <h2>{{block.copy}}</h2>
+    {{/if}}
     {{#if block.mapUrl != undefined}}
     <div class="gv-subheader-map">
      <!--  <object class="desktop" data="<%= path %>/assets/{{block.mapUrl}}" type="image/jpg"></object>
@@ -9,9 +11,9 @@
       <img class="mobile" src="<%= path %>/assets/{{block.mobmapUrl}}" />
     </div>
      {{/if}}
-     <div class="gv-subheader-marker">
+     <!-- <div class="gv-subheader-marker">
         <img class="marker" src="<%= path %>/assets/{{block.svgUrl}}" />
-     </div>
+     </div> -->
     <!-- <div class="gv-subheader-logo {{block.class}}">
       <img class="desktop" src="<%= path %>/{{block.logoUrl}}">
       <img class="mobile" src="<%= path %>/{{block.mobileUrl}}">
