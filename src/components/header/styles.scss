@@ -1,13 +1,83 @@
 // If using looping video //
 
+#bg {
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  //
+  // /* Preserve aspet ratio */
+  // min-width: 100vw;
+  // min-height: 100vh;
+}
+
+
+
+.gv-header-container {
+    height: 80vh;
+    position: relative;
+
+}
+
+.gv-header-image-container {
+  position: absolute;
+  top: 0px;
+  height: 80vh;
+}
+
+.gv-header-image {
+   display: block;
+   height: 80vh;
+   width: 100vw;
+   background-repeat: no-repeat;
+   background-size: cover;
+    background-position: center;
+   background-image: url('<%= path %>/assets/2000-test.jpg');
+   mix-blend-mode: screen;
+   z-index: 1;
+   position: relative;
+   // overflow: hidden;
+}
+
+.gv-header-gradient {
+  background:linear-gradient(270deg, #121212,#ff0000,#ffca00 );
+  position: absolute;
+  background-size: 400% 400%;
+  width: 200vw;
+  left: -100vw;
+  height: 80vh;
+  top: 0;
+  // left: 0;
+  right:0;
+  bottom: 0;
+  z-index: 0;
+  animation: AnimationName 10s ease infinite;
+  // overflow: hidden;
+}
+
+@keyframes AnimationName {
+    0%{background-position:0% 29%}
+    50%{background-position:100% 72%}
+    100%{background-position:0% 29%}
+}
+
+// .gv-header-gradient {
+//   display: block;
+//   position: absolute;
+//   top: 0px;
+//   height: 80vh;
+//   width: 100%;
+//   background-color: yellow;
+//   z-index: 0;
+// }
+
 .gv-header-wrapper {
     margin: 0 auto;
     overflow: hidden;
     position: relative;
-    // background-color: #eaeaea;
     @include mq(tablet) {
         height: 580px;
     }
+
 
     .video-wrapper {
       padding-bottom: inherit;
@@ -51,55 +121,15 @@
 
 
 
-// If using static Image //
-
-// .gv-header-wrapper {
-//     width: 100%;
-//     min-height: 400px;
-//     background-color: $neutral-7;
-//     position: relative;
-//     z-index: 0;
-//
-//
-//     &::before {
-//       background-color: $neutral-7;
-//       content: "";
-//       display: block;
-//       height: 100%;
-//       width: 200vw;
-//       left: -100vw;
-//       position: absolute;
-//         z-index: -20;
-//
-//     }
-// }
-// .gv-image-wrapper {
-//     width: 100%;
-//     min-height: 400px;
-//     background-color: $highlight-yellow;
-//     position: relative;
-//     z-index: -1;
-//
-//
-//
-//     &::before {
-//       background-color: $highlight-yellow;
-//       content: "";
-//       display: block;
-//       height: 100%;
-//       width: 200vw;
-//       left: -100vw;
-//       position: absolute;
-//         z-index: -20;
-//
-//     }
-// }
-
 .gv-header {
   position: relative;
   margin: 0 auto;
   max-width: 620px;
-  // padding: 0 10px 20px 10px;
+}
+
+.gv-headline-wrapper {
+  top: 0px;
+  z-index: 20;
 }
 
 .gv-headline {
@@ -112,6 +142,11 @@
       z-index: 1000;
       color: $neutral-7;
       z-index: 1;
+      position: absolute;
+      background: -webkit-linear-gradient(#FFD856, #ff5234);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
       @include mq(mobileMedium) {
         font-size: 40px;
         line-height: 44px;
@@ -129,120 +164,27 @@
           line-height: 54px;
       }
       @include mq(desktop) {
-          font-size: 64px;
-          line-height: 68px;
+          font-size: 160px;
+          // line-height: 160px;
+          width: 980px;
       }
 
       @include mq(leftCol) {
       }
 
       @include mq(wide) {
-      }
-
-      // span {
-      //   padding-left: 126px;
-      // }
-      // overflow: hidden;
-      // height: 85vh;
-      // width: auto;
-      // @include mq(tablet) {
-      //   font-size: 72px;
-      //   line-height: 60px;
-      //   left: -100px;
-      // }
-      // @include mq(desktop) {
-      //   font-size: 50px;
-      //   line-height: 50px;
-      //   left: 0px;
-      // }
-      // @include mq(leftCol) {
-      //   left: -116px;
-      // }
-      // @include mq(wide) {
-      //   left: -34px;
-      // }
-    }
-
-    .gv-image-wrapper {
-      display: block;
-
-      image {
-        position:absolute;
-    top:0;
-    // animation-name: fade;
-    // animation-iteration-count: infinite;
-    // animation-duration: 12.5s;
-		// opacity: 0;
-		@include mq(mobile) {
-			position: absolute;
-			height: 240px;
-			top: 35px;
-			right: -10px;
-		}
-
-		@include mq(tablet) {
-			height: 380px;
-			right: -40px
-		}
-
-		@include mq(desktop) {
-			height: 500px;
-			top: 60px;
-			right: -50px;
-		}
+        font-size: 112px;
+        line-height: 1.0;
+        width: 1060px;
+        padding-top: 20px;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
 
 
 
 .gv-header-wrapper::before {}
-
-// .gv-headline__image {
-//     content: "";
-//     position: absolute;
-//     display: block;
-//     background: url('<%= path %>/assets/header-logo-mobile.svg');
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     z-index: 1001;
-//     width: 106px;
-//     height: 207px;
-//     right: 56%;
-//     top: calc(80vh * (7/16));
-//
-//     @include mq($from: mobileMedium) {
-//         width: 126px;
-//         height: 247px;
-//     }
-//
-//     @include mq($from: mobileLandscape) {
-//         right: 73%;
-//     }
-//
-//
-//     @include mq($from: tablet) {
-//       background: url('<%= path %>/assets/header-logo.svg');
-//       background-size: cover;
-//       width: 196px;
-//       height: 114px;
-//       top: calc(12vw * (9/16));
-//       right: 36.5%;
-//     }
-//
-//     @include mq($from: desktop) {
-//         width: 244px;
-//         height: 140px;
-//     }
-//     @include mq($from: leftCol) {
-//         width: 278px;
-//         height: 161px;
-//     }
-//
-//     @include mq($from: wide) {
-//         width: 316px;
-//         height: 183px;
-//     }
-// }
 
 
 

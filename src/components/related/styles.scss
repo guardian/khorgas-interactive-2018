@@ -1,0 +1,172 @@
+.gv-standfirst {
+  @include mq(leftCol) {
+    min-height: 204px;
+  }
+  p {
+    @include fs-headline(3);
+    font-weight: 300;
+    font-style: italic;
+    padding-top: 6px;
+    padding-bottom: 12px;
+    max-width: 95%;
+    padding-left: 10px;
+    margin-top: 46px;
+    @include mq(mobileMedium) {
+      max-width: 90%;
+    }
+    @include mq(tablet) {
+      padding-left: 0px;
+    }
+    @include mq(leftCol) {
+      padding-bottom: 32px;
+      font-size: 22px;
+      line-height: 26px;
+      max-width: 89%;
+      margin-top: 40px;
+  }
+  &::before {
+      content:'';
+      border-left: 1px solid $neutral-86;
+      display: block;
+      position: absolute;
+      left: 10px;
+      height: calc(100%-50px);
+  }
+}
+
+}
+
+.gv-meta-container {
+    position: relative;
+    background-image: -webkit-repeating-linear-gradient(top, $neutral-86, $neutral-86 0.0625rem, transparent 0.0625rem, transparent 0.25rem);
+    background-image: repeating-linear-gradient(to bottom, $neutral-86, $neutral-86 0.0625rem, transparent 0.0625rem, transparent 0.25rem);
+    background-repeat: repeat-x;
+    background-position: top;
+    -webkit-background-size: 1px 13px;
+    background-size: 1px 13px;
+    padding: 16px 0 0 0;
+    display: block;
+    max-width: 620px;
+    margin: 0 auto;
+
+
+    @include mq(tablet) {
+      margin-top: 10px;
+      // margin-left: 0px;
+    }
+
+
+
+
+}
+
+.interactive-share {
+  height: 32px;
+  width: 32px;
+  border-radius: 34px;
+  display: inline-block;
+  border: 1px solid $neutral-86;
+  cursor: pointer;
+  outline: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 32px;
+  margin-bottom: 16px;
+  &[data-network='facebook'] {
+      background-image: url("<%= path %>/assets/facebook.svg");
+      background-color: white;
+  }
+  &[data-network='twitter'] {
+      background-image: url("<%= path %>/assets/twitter.svg");
+      background-color: white;
+  }
+  &[data-network='email'] {
+      background-image: url("<%= path %>/assets/mail.svg");
+      background-color: white;
+  }
+}
+
+.interactive-share:hover {
+  cursor: pointer;
+  background-color: $news-red;
+
+    &[data-network='facebook'] {
+        background-image: url("<%= path %>/assets/facebook-white.svg");
+    }
+    &[data-network='twitter'] {
+            background-image: url("<%= path %>/assets/twitter-white.svg");
+    }
+    &[data-network='email'] {
+            background-image: url("<%= path %>/assets/mail-white.svg");
+    }
+}
+
+.gv-byline {
+  @include fs-bodyCopy(2);
+  font-style: italic;
+  line-height: 20px;
+  margin-bottom: 10px;
+
+  a {
+    font-style:normal;
+    font-weight: bold;
+    color: $news-red;
+  }
+}
+
+// badging //
+.container-badge {
+  width: 100%;
+  position: relative;
+  display: block;
+  @include fs-textSans(1);
+
+
+
+
+  a {
+    color: $news-red;
+  }
+
+  .badge {
+    border-top: 1px solid $neutral-86;
+    padding-top: 2px;
+
+    @include mq(desktop) {
+        border-bottom: none;
+    }
+
+  }
+
+  .badge {
+    text-align: left;
+    overflow: hidden;
+  }
+
+  .badge__link {
+    display: block;
+    padding-right: 10px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+  .badge__logo {
+    margin-left: 0;
+  }
+}
+
+.gv-byline, .badge, .gv-share {
+  padding-left: 10px;
+  padding-right: 10px;
+  @include mq(mobileLandscape) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @include mq(leftCol) {
+    padding-left: 0px;
+    padding-right:0px;
+  }
+}

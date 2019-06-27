@@ -26,6 +26,8 @@
     <Slider block={{block}} serverside={{serverside}}></Slider>
   {{elseif block.block.toLowerCase() === 'headergrid'}}
     <HeaderGrid block={{block}} serverside={{serverside}}></HeaderGrid>
+  {{elseif block.block.toLowerCase() === 'headergrid'}}
+    <Related block={{block}} serverside={{serverside}}></Related>
   {{/if}}
 {{/each}}
 
@@ -45,6 +47,7 @@ const Carousel = requireUncached('../carousel/render.html')
 const VidCarousel = requireUncached('../carousel-w-video/render.html')
 const Slider = requireUncached('../slider/render.html')
 const HeaderGrid = requireUncached('../headergrid/render.html')
+const Related = requireUncached('../related/render.html')
 
 export default {
     oncreate() {
@@ -63,7 +66,8 @@ export default {
           Carousel: Carousel,
           VidCarousel: VidCarousel,
           Slider: Slider,
-          HeaderGrid: HeaderGrid
+          HeaderGrid: HeaderGrid,
+          Related: Related
         }
 
 }
