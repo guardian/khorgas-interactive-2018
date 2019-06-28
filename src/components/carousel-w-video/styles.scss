@@ -100,7 +100,7 @@
     min-height: 132px;
     display: inline-block;
     color: $neutral-7;
-    background: white;
+    background: none;
 
     @include mq(phabletSmall) {
       min-height: 88px;

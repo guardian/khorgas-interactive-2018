@@ -1,8 +1,11 @@
 .interactive-atom {
 
   .inlineShift {
-    p {
-      margin-left: 320px;
+    @include mq(tablet) {
+      p {
+        margin-left: 320px;
+        margin-top: -320px;
+      }
     }
   }
 

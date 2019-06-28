@@ -6,10 +6,14 @@
 }
 
 .mapimage {
-  display: inline-block;
-
+  display: flex;
+  justify-content: center;
   img {
     width: 310px;
+    margin-bottom: 6px;
+  }
+  @include mq(tablet) {
+    display: inline-block;
   }
 }
 
