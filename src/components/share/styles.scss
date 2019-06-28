@@ -48,12 +48,22 @@
 
 }
 
-.gv-byline {
+.gv-byline, .gv-byline-bot {
   @include fs-headline(2);
   font-style: italic;
   line-height: 20px;
   margin-bottom: 6px;
 
+  a {
+    @include fs-headline(2);
+    font-style:normal;
+    font-weight:bold;
+    color: #ff5234;
+  }
+}
+
+// Left col extra line - this is hacky
+.gv-byline-bot {
   @include mq(leftCol) {
     &::before {
         content:'';
@@ -70,14 +80,6 @@
       }
     }
 
-  }
-
-
-  a {
-    @include fs-headline(2);
-    font-style:normal;
-    font-weight:bold;
-    color: #ff5234;
   }
 }
 
