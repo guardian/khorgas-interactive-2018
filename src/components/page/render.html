@@ -26,8 +26,10 @@
     <Slider block={{block}} serverside={{serverside}}></Slider>
   {{elseif block.block.toLowerCase() === 'headergrid'}}
     <HeaderGrid block={{block}} serverside={{serverside}}></HeaderGrid>
-  {{elseif block.block.toLowerCase() === 'headergrid'}}
+  {{elseif block.block.toLowerCase() === 'related'}}
     <Related block={{block}} serverside={{serverside}}></Related>
+  {{elseif block.block.toLowerCase() === 'chart'}}
+    <Chart block={{block}}></Chart>
   {{/if}}
 {{/each}}
 
@@ -48,6 +50,7 @@ const VidCarousel = requireUncached('../carousel-w-video/render.html')
 const Slider = requireUncached('../slider/render.html')
 const HeaderGrid = requireUncached('../headergrid/render.html')
 const Related = requireUncached('../related/render.html')
+const Chart = requireUncached('../chart/render.html')
 
 export default {
     oncreate() {
@@ -67,7 +70,8 @@ export default {
           VidCarousel: VidCarousel,
           Slider: Slider,
           HeaderGrid: HeaderGrid,
-          Related: Related
+          Related: Related,
+          Chart: Chart
         }
 
 }

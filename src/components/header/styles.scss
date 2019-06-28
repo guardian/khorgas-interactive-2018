@@ -15,43 +15,51 @@
 .gv-header-container {
     height: 80vh;
     position: relative;
-
 }
 
 .gv-header-image-container {
   position: absolute;
   top: 0px;
-  height: 80vh;
+  height: 90vh;
+  @include mq(tablet) {
+    height: 80vh;
+  }
 }
 
 .gv-header-image {
    display: block;
-   height: 80vh;
+   height: 90vh;
    width: 100vw;
    background-repeat: no-repeat;
    background-size: cover;
     background-position: center;
-   background-image: url('<%= path %>/assets/2000-test.jpg');
+   background-image: url('<%= path %>/assets/david-island.jpg');
    mix-blend-mode: screen;
    z-index: 1;
    position: relative;
    // overflow: hidden;
+   @include mq(tablet) {
+     height: 80vh;
+   }
 }
 
 .gv-header-gradient {
-  background:linear-gradient(270deg, #121212,#ff0000,#ffca00 );
+  background:linear-gradient(90deg, #121212,#ff0000,#ffca00 );
   position: absolute;
   background-size: 400% 400%;
-  width: 200vw;
-  left: -100vw;
-  height: 80vh;
+  width: 100vw;
+  height: 90vh;
   top: 0;
-  // left: 0;
+  left: 0;
   right:0;
   bottom: 0;
   z-index: 0;
   animation: AnimationName 10s ease infinite;
   // overflow: hidden;
+
+  @include mq(tablet) {
+    height: 80vh;
+  }
 }
 
 @keyframes AnimationName {
@@ -60,14 +68,10 @@
     100%{background-position:0% 29%}
 }
 
-// .gv-header-gradient {
-//   display: block;
-//   position: absolute;
-//   top: 0px;
-//   height: 80vh;
-//   width: 100%;
-//   background-color: yellow;
-//   z-index: 0;
+// @keyframes AnimationName {
+//     0%{background-position:0% 50%}
+//     50%{background-position:100% 50%}
+//     100%{background-position:0% 50%}
 // }
 
 .gv-header-wrapper {
@@ -134,42 +138,36 @@
 
 .gv-headline {
       @include fs-titlepiece(3);
-      // position: absolute;
-      // bottom: 60vh;
-      // left:  0px;
-      font-size: 34px;
-      line-height: 38px;
+      font-size: 40px;
+      line-height: 1.0;
       z-index: 1000;
       color: $neutral-7;
       z-index: 1;
-      position: absolute;
       background: -webkit-linear-gradient(#FFD856, #ff5234);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      position: absolute;
+      top: 6px;
 
       @include mq(mobileMedium) {
-        font-size: 40px;
-        line-height: 44px;
+        font-size: 48px;
       }
 
 
-      @include mq(phablet) {
-          // margin: 0 20px;
+      @include mq(mobileLandscape) {
+        font-size: 60px;
       }
 
       @include mq(tablet) {
-          // position: relative;
-          // margin: 0 auto;
-          font-size: 50px;
-          line-height: 54px;
+          font-size: 80px;
       }
       @include mq(desktop) {
-          font-size: 160px;
-          // line-height: 160px;
+          font-size: 90px;
           width: 980px;
       }
 
       @include mq(leftCol) {
+        font-size: 100px;
       }
 
       @include mq(wide) {
@@ -190,8 +188,6 @@
 
 .gv-headline-seo {
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -100;
-  color: #fff;
+  top: -2000px;
+  left: -2000px;
 }

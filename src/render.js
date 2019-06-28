@@ -13,12 +13,13 @@ export async function render() {
         json: true
     });
 
-    const related = await rp({
+    const relatedapi = await rp({
         //uri: 'https://interactive.guim.co.uk/docsdata-test/1P-6YwejZEA68ZzJVsJV0_jWJL-7uYOwEzFRi_UTSdfU.json',
         // uri: 'https://interactive.guim.co.uk/docsdata-test/1pAzeqyyGTs9wjz0nVj9Cz0LKeTlLU2OhJwYLB4Z9XXY.json',
         uri: 'https://api.nextgen.guardianapps.co.uk/related/environment/2019/jun/07/oceans-demise-the-end-of-the-arctic-as-we-know-it.json?exclude-tag=tone/advertisement-features&exclude-tag=guardian-professional/guardian-professional',
         json: true
-    }).html;
+    });
+    var related = relatedapi.html;
 
 
 

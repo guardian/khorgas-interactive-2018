@@ -6,10 +6,6 @@
 }
 
 
-
-
-
-
   p {
 
         font-family: $f-serif-text;
@@ -22,6 +18,12 @@
   p {
     a {
       color: $news-red;
+    }
+  }
+
+  .gv-main-column.dropcap:first-of-type {
+    @include mq(leftCol) {
+      margin-top: -220px;
     }
   }
 

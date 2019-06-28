@@ -22,8 +22,6 @@ body {
 .element-atom,
 .interactive-atom {
     margin: 0 !important;
-
-
 }
 
 a:any-link {
@@ -47,6 +45,7 @@ a:hover {
 @import "../components/slider/styles";
 @import "../components/carousel/styles";
 @import "../components/carousel-w-video/styles";
+@import "../components/related/styles";
 
 
 
