@@ -5,6 +5,14 @@
     }
 }
 
+.mapimage {
+  display: inline-block;
+
+  img {
+    width: 310px;
+  }
+}
+
 .visual-image-2 {
     width: calc(50% - 5px);
     float: left;

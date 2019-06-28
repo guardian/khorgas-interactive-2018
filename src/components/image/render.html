@@ -1,9 +1,9 @@
-<div class='visual-element--image visual-element--{{block.weight ? block.weight : 'inline '}}'>
-    <div class='visual-image'>
+<div class='gv-block gv-page-width visual-element--image visual-element--{{block.weight ? block.weight : 'inline '}}'>
+    <div class='gv-main-column visual-image {{block.class}}'>
         <picture>
-            <source media="(min-width: 700px)" srcset="{{block.desktopSrc}}">
-            <source srcset="{{block.mobileSrc}}">
-            <img src="{{block.desktopSrc}}" alt="">
+            <source media="(min-width: 700px)" srcset="<%= path %>/assets/{{block.desktopSrc}}">
+            <source srcset="<%= path %>/assets/{{block.mobileSrc}}">
+            <img src="<%= path %>/assets/{{block.desktopSrc}}" alt="">
         </picture>
     </div>
 </div>

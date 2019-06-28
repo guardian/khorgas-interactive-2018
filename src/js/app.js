@@ -73,7 +73,7 @@ function share(title, shareURL, fbImg, twImg, hashTag) {
 }
 
 
-var shareFn = share(`It's getting warmer, wetter, wilder': the Arctic town heating faster than anywhere`, 'https://gu.com/p/bycxa', '');
+var shareFn = share(`'It's getting warmer, wetter, wilder': the Arctic town heating faster than anywhere`, 'https://gu.com/p/bycxa', '');
 [].slice.apply(document.querySelectorAll('.interactive-share')).forEach(shareEl => {
     var network = shareEl.getAttribute('data-network');
     shareEl.addEventListener('click',() => shareFn(network));
