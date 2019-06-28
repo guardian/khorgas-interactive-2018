@@ -71,7 +71,9 @@
   }
   h2 {
     @include fs-titlepiece(3);
-    color: $news-red;
+    background: -webkit-linear-gradient(#FFD856, #f12711);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 32px;
     line-height: 32px;
     font-weight: 600;
@@ -79,7 +81,7 @@
     padding-bottom: 12px;
     margin: 0;
     margin-left: -10px;
-    width: 180%;
+    width: 250%;
     //position: absolute;
     //top: 0;
     //left: 10px;

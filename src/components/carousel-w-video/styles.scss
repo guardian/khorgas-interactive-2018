@@ -8,7 +8,7 @@
 
   .swiper-container {
     height: 420px;
-    // margin-bottom: 20px;
+    margin-bottom: 14px !important;
     // overflow: visible!important;
     // padding-top: 0px;
     // padding-bottom: 50px;
@@ -22,7 +22,7 @@
           height: 550px;
     }
      @include mq(desktop) {
-          height: 780px;
+          height: 760px;
     }
     @include mq(leftCol) {
         //  padding-top: 5px;
@@ -38,8 +38,8 @@
 
   .carousel-caption-firstname, .carousel-caption-lastname {
     @include fs-titlepiece(3);
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 32px;
+    line-height: 36px;
     display:block;
     position: relative;
     margin: 0;
@@ -51,18 +51,41 @@
     }
 
     span {
-      background: linear-gradient(#121212, #121212) no-repeat;
-      box-shadow: 10px 0 0 #121212, -10px 0 0 #121212;
+      background: #ff5234 no-repeat;
+      box-shadow: 6px 0 0 #ff5234, -6px 0 0 #ff5234;
+
+      @include mq(desktop) {
+        box-shadow: 10px 0 0 #ff5234, -10px 0 0 #ff5234;
+      }
     }
+
   }
 
   .carousel-caption-firstname {
     z-index: 5;
+    // color: $neutral-7;
+    // span {
+    //   background: #FFD856 no-repeat;
+    //   box-shadow: 10px 0 0 #FFD856, -10px 0 0 #FFD856;
+    // }
   }
 
   .carousel-caption-lastname  {
-    margin-left: 120px;
+    margin-left: 20px;
     margin-bottom: 6px;
+
+    @include mq(mobileMedium) {
+      margin-left: 30px;
+    }
+
+    @include mq(leftCol) {
+      margin-left: 120px;
+    }
+    // color: $neutral-7;
+    // span {
+    //   background: #ff5234 no-repeat;
+    //   box-shadow: 10px 0 0 #ff5234, -10px 0 0 #ff5234;
+    // }
   }
   .carousel-caption-copy {
     @include f-headline;
@@ -73,7 +96,6 @@
     padding-bottom: 12px;
     margin-top: -7px;
     padding-top: 7px;
-    padding-left: 120px;
     padding-right: 10px;
     min-height: 132px;
     display: inline-block;
@@ -88,6 +110,7 @@
       font-size: 20px;
       line-height: 26px;
       min-height: 104px;
+      padding-left: 120px;
     }
 
     &:before {

@@ -32,14 +32,17 @@
    width: 100vw;
    background-repeat: no-repeat;
    background-size: cover;
-    background-position: center;
-   background-image: url('<%= path %>/assets/david-island.jpg');
+  background-position: center;
+   background-image: url('<%= path %>/assets/david-island-mobile.jpg');
    mix-blend-mode: screen;
    z-index: 1;
    position: relative;
    // overflow: hidden;
    @include mq(tablet) {
      height: 80vh;
+   }
+   @include mq(desktop) {
+     background-image: url('<%= path %>/assets/david-island.jpg');
    }
 }
 

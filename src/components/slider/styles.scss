@@ -87,7 +87,7 @@
       .slider-caption-heading {
         @include fs-textSans(1);
         font-weight: bold;
-        background: $news-red;
+        background: linear-gradient(to top right,#f38e17, #f12711);
         display: inline-block;
         float: left;
         padding: 2px 6px;
@@ -100,7 +100,7 @@
         @include fs-textSans(1);
         padding: 2px 6px 4px 6px;
         display: inline-block;
-        background: $news-red;
+        background:linear-gradient(to bottom right,#f38e17, #f12711);
         float: left;
         clear: left;
         margin-top: -2px;

@@ -58,7 +58,7 @@
     @include fs-headline(2);
     font-style:normal;
     font-weight:bold;
-    color: $news-red;
+    color: #ff5234;
   }
 }
 
@@ -116,7 +116,7 @@
 
 .interactive-share:hover {
   cursor: pointer;
-  background-color: $news-red;
+  background-color: #ff5234;
 
     &[data-network='facebook'] {
         background-image: url("<%= path %>/assets/facebook-white.svg");
@@ -138,7 +138,7 @@
   a {
     font-style:normal;
     font-weight: bold;
-    color: $news-red;
+    color: #ff5234;
   }
 }
 
@@ -153,7 +153,7 @@
 
 
   a {
-    color: $news-red;
+    color: #ff5234;
   }
 
   .badge {

@@ -17,7 +17,7 @@
 
   p {
     a {
-      color: $news-red;
+      color: #ff5234;
     }
   }
 
@@ -42,11 +42,14 @@
     p:first-child:first-letter {
       @include fs-titlepiece(3);
       float: left;
-      color: $news-red;
+      color: #ff5234;
       font-size: 80px;
       line-height: 60px;
       padding-top: 0px;
       padding-right: 6px;
+      background: -webkit-linear-gradient(#f38e17, #f12711);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
      }
 
   }
