@@ -61,9 +61,9 @@ function share(title, shareURL, fbImg, twImg, hashTag) {
         if (network === 'twitter') {
             shareWindow = twitterBaseUrl + encodeURIComponent(twitterMessage + ' ') + shareURL;
         } else if (network === 'facebook') {
-            shareWindow = facebookBaseUrl + 'https://gu.com/p/92cfc';
+            shareWindow = facebookBaseUrl + 'https://gu.com/p/bycxa';
         } else if (network === 'email') {
-            shareWindow = 'mailto:?subject=' + encodeURIComponent(title) + '&body=' + 'https://gu.com/p/92cfc';
+            shareWindow = 'mailto:?subject=' + encodeURIComponent(title) + '&body=' + 'https://gu.com/p/bycxa';
         } else if (network === 'google') {
             shareWindow = googleBaseUrl + '';
         }
@@ -73,7 +73,7 @@ function share(title, shareURL, fbImg, twImg, hashTag) {
 }
 
 
-var shareFn = share('Follow the New Silk Road', 'https://gu.com/p/92cfc', '');
+var shareFn = share(`It's getting warmer, wetter, wilder': the Arctic town heating faster than anywhere`, 'https://gu.com/p/bycxa', '');
 [].slice.apply(document.querySelectorAll('.interactive-share')).forEach(shareEl => {
     var network = shareEl.getAttribute('data-network');
     shareEl.addEventListener('click',() => shareFn(network));
@@ -241,9 +241,9 @@ var firstSlide = carousel.slides[0];
 //   var firstSlide = carousel.slides[0];
 
 //   var vid = firstSlide.getElementsByTagName('video');
-  
+
 //   var media = vid[0];
-  
+
 
 // }
 
@@ -277,7 +277,7 @@ if (carousel.activeIndex == 0) {
 
 // play vid
 
-  
+
 
 //beginning = false;
 

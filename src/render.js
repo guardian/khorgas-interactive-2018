@@ -21,6 +21,11 @@ export async function render() {
     });
     var related = relatedapi.html;
 
+    data.blocks.push({
+      block: "related",
+      contents: related
+    });
+
 
 
     const html = Page.render({
