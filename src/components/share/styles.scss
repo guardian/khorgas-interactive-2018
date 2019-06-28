@@ -34,14 +34,15 @@
       line-height: 26px;
       max-width: 540px;
       margin-top: -20vh;
-  }
-  &::before {
-      content:'';
-      border-left: 1px solid $neutral-86;
-      display: block;
-      position: absolute;
-      left: 10px;
-      height: calc(100%-50px);
+      &::before {
+          content:'';
+          border-left: 1px solid $neutral-86;
+          display: block;
+          position: absolute;
+          top: 10px;
+          left: -11px;
+          height: 20vh;
+      }
   }
 }
 
@@ -52,6 +53,24 @@
   font-style: italic;
   line-height: 20px;
   margin-bottom: 6px;
+
+  @include mq(leftCol) {
+    &::before {
+        content:'';
+        border-left: 1px solid $neutral-86;
+        display: block;
+        position: absolute;
+        top: -500px;
+        left: 169px;
+        height: 560px;
+    }
+    @include mq(wide) {
+      &::before {
+        left: 250px;
+      }
+    }
+
+  }
 
 
   a {

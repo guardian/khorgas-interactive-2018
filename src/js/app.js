@@ -3,6 +3,10 @@ import VideoPlayer from '../components/video/index.html'
 //import Siema from 'siema'
 import Swiper from 'swiper'
 import detect from './detect'
+import Tracker from './tracking'
+
+const tracker = Tracker();
+tracker.registerEvent('pageLoad',true);
 
 
 var isAndroidApp = ( detect.isAndroid() && window.location.origin === "file://" ) ? true : false;
@@ -213,6 +217,8 @@ var carousel = new Swiper('.carousel-container', {
 
 var beginning = true;
 
+
+
 carousel.on('slideChangeTransitionStart', function(e) { updateCarouselMargin(); });
 carousel.on('slideChangeTransitionEnd', function(e) { playVid(); });
 //carousel.on('reachBeginning', function(e) { beginning = true; });
@@ -225,6 +231,11 @@ var firstSlide = carousel.slides[0];
 
   var vid = firstSlide.getElementsByTagName('video');
   vid[0].play();
+
+
+  carousel.on('slideChange', function(e) {
+    tracker.registerEvent('interactedSlide', true);
+  });
 
 
 // vid[0].pause();

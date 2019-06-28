@@ -202,6 +202,8 @@
 
 
 
+
+
 .gv-subheader-container {
     position: relative;
     background-image: -webkit-repeating-linear-gradient(top, $neutral-86, $neutral-86 0.0625rem, transparent 0.0625rem, transparent 0.25rem);
@@ -215,19 +217,19 @@
     padding-left: 10px;
     padding-right: 10px;
 
-    // &::before {
-    //   background-image: -webkit-repeating-linear-gradient(top, $neutral-86, $neutral-86 0.0625rem, transparent 0.0625rem, transparent 0.25rem);
-    //   background-image: repeating-linear-gradient(to bottom, $neutral-86, $neutral-86 0.0625rem, transparent 0.0625rem, transparent 0.25rem);
-    //   content: "";
-    //   display: block;
-    //   height: 13px;
-    //   width: 200vw;
-    //   left: -100vw;
-    //   position: absolute;
-    //   z-index: -20;
-    //   // top: 0px;
-    //
-    // }
+    &::before {
+      background-image: -webkit-repeating-linear-gradient(top, $neutral-86, $neutral-86 0.0625rem, transparent 0.0625rem, transparent 0.25rem);
+      background-image: repeating-linear-gradient(to bottom, $neutral-86, $neutral-86 0.0625rem, transparent 0.0625rem, transparent 0.25rem);
+      content: "";
+      display: block;
+      height: 13px;
+      width: 200vw;
+      left: -100vw;
+      position: absolute;
+      z-index: -20;
+      // top: 0px;
+
+    }
 
     @include mq(tablet) {
       margin-top: 10px;
@@ -239,6 +241,7 @@
       padding-right: 0px;
     }
 }
+
 
 .gv-subheader-marker {
 

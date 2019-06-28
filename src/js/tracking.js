@@ -32,7 +32,7 @@ export default function tracker(){
       }
 
       // console.log(e, data);
-      w.ga("send", "event", "interactives", e, 'video_' + data);
+      w.ga("send", "event", "interactives", "svalbard_" + e, data);
     }
   }
 
