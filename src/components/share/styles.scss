@@ -10,7 +10,6 @@
     padding-top: 6px;
     padding-bottom: 12px;
     max-width: 100%;
-    padding-left: 10px;
     color: white;
     position: absolute;
     margin-top: -140px;
@@ -26,7 +25,7 @@
     @include mq(tablet) {
       padding-left: 0px;
       max-width: 420px;
-      margin-top: -13vh;
+      margin-top: -15vh;
     }
     @include mq(leftCol) {
       padding-bottom: 32px;
@@ -46,6 +45,12 @@
   }
 }
 
+}
+
+.android {
+  .gv-standfirst {
+    margin-top: -196px;
+  }
 }
 
 .gv-byline, .gv-byline-bot {
@@ -160,6 +165,20 @@
     font-style:normal;
     font-weight: bold;
     color: #ff5234;
+  }
+}
+
+.gv-timestamp-label {
+  @include fs-textSans(2);
+  color: $neutral-46;
+  padding-left: 10px;
+
+  @include mq(mobileLandscape) {
+    padding-left: 20px;
+  }
+
+  @include mq(leftCol) {
+    padding-left: 0px;
   }
 }
 
