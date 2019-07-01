@@ -16,7 +16,7 @@ export async function render() {
     const relatedapi = await rp({
         //uri: 'https://interactive.guim.co.uk/docsdata-test/1P-6YwejZEA68ZzJVsJV0_jWJL-7uYOwEzFRi_UTSdfU.json',
         // uri: 'https://interactive.guim.co.uk/docsdata-test/1pAzeqyyGTs9wjz0nVj9Cz0LKeTlLU2OhJwYLB4Z9XXY.json',
-        uri: 'https://api.nextgen.guardianapps.co.uk/related/environment/2019/jun/07/oceans-demise-the-end-of-the-arctic-as-we-know-it.json?exclude-tag=tone/advertisement-features&exclude-tag=guardian-professional/guardian-professional',
+        uri: 'https://api.nextgen.guardianapps.co.uk/related/environment/ng-interactive/2019/jul/01/its-getting-warmer-wetter-wilder-the-arctic-town-heating-faster-than-anywhere.json?exclude-tag=tone/advertisement-features&exclude-tag=guardian-professional/guardian-professional',
         json: true
     });
     var related = relatedapi.html;
