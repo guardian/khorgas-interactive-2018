@@ -18,6 +18,8 @@
     @include mq(tablet) {
       height: 80vh;
     }
+    width: 100%;
+    overflow: hidden;
 }
 
 .gv-header-image-container {
@@ -200,8 +202,7 @@
       p {
         @include fs-headline(3);
         font-size: 17px;
-        font-weight: 700;
-        font-style: italic;
+        font-weight: 600;
         padding-top: 6px;
         max-width: 100%;
         color: white;

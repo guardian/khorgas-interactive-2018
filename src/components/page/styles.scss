@@ -1,5 +1,9 @@
 @import "mq";
 
+body {
+  overflow-x: hidden;
+}
+
 h1.content__headline {
     @include fs-headline(9);
 }
