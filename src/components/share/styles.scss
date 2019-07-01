@@ -47,13 +47,13 @@
 //
 // }
 
-// .android {
-//   .gv-standfirst {
-//     p {
-//     margin-top: -196px;
-//   }
-// }
-// }
+.android {
+  .gv-standfirst {
+    p {
+    margin-top: -20px;
+  }
+}
+}
 
 .gv-byline, .gv-byline-bot {
   @include fs-headline(2);

@@ -231,6 +231,18 @@
 
     }
 
+    .android {
+      .gv-standfirst {
+        bottom: 38px;
+      }
+    }
+
+    .ios {
+      .gv-standfirst {
+        bottom: -12px;
+      }
+    }
+
 
 
 .gv-header-wrapper::before {}
