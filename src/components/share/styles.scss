@@ -47,13 +47,6 @@
 //
 // }
 
-.android {
-  .gv-standfirst {
-    p {
-    margin-top: -20px;
-  }
-}
-}
 
 .gv-byline, .gv-byline-bot {
   @include fs-headline(2);
@@ -238,4 +231,12 @@
 .badge__help {
   position: absolute;
   bottom: 18px;
+  left: 10px;
+
+  @include mq(mobileLandscape) {
+    left: 20px;
+  }
+  @include mq(leftCol) {
+    left: 0px;
+  }
 }

@@ -177,12 +177,15 @@
       }
 
       @include mq(wide) {
-        font-size: 112px;
+        // font-size: 112px;
         line-height: 1.0;
         width: 1060px;
         padding-top: 20px;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+      }
+      @include mq(ultraWide) {
+        font-size: 112px;
       }
     }
 
