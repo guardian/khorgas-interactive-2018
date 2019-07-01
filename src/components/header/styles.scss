@@ -243,6 +243,12 @@
       }
     }
 
+    .android, .ios {
+      .gv-share {
+        display: none;
+      }
+    }
+
 
 
 .gv-header-wrapper::before {}

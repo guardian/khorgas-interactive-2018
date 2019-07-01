@@ -52,7 +52,7 @@ setTimeout(() => {
 //initialise share tools
 
 const twitterBaseUrl = 'https://twitter.com/intent/tweet?text=';
-const facebookBaseUrl = 'https://www.facebook.com/dialog/feed?display=popup&app_id=741666719251986&redirect_uri=http://www.theguardian.com&link=';
+const facebookBaseUrl = 'https://www.facebook.com/dialog/feed?display=popup&app_id=180444840287&redirect_uri=http://www.theguardian.com&link=';
 const googleBaseUrl = 'https://plus.google.com/share?url=';
 
 function share(title, shareURL, fbImg, twImg, hashTag) {
