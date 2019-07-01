@@ -1,59 +1,59 @@
-.gv-standfirst {
-  @include mq(leftCol) {
-    min-height: 204px;
-  }
-  p {
-    @include fs-headline(3);
-    font-size: 17px;
-    font-weight: 700;
-    font-style: italic;
-    padding-top: 6px;
-    padding-bottom: 12px;
-    max-width: 100%;
-    color: white;
-    position: absolute;
-    margin-top: -140px;
-    @include mq(mobileMedium) {
-      @include fs-headline(3);
-      font-weight: 700;
-      margin-bottom: 18px;
-      max-width: 320px;
-      margin-top: -23vh;
-    }
-    @include mq(mobilePlus) {
-    }
-    @include mq(tablet) {
-      padding-left: 0px;
-      max-width: 420px;
-      margin-top: -15vh;
-    }
-    @include mq(leftCol) {
-      padding-bottom: 32px;
-      font-size: 22px;
-      line-height: 26px;
-      max-width: 540px;
-      margin-top: -20vh;
-      &::before {
-          content:'';
-          border-left: 1px solid $neutral-86;
-          display: block;
-          position: absolute;
-          top: 10px;
-          left: -11px;
-          height: 20vh;
-      }
-  }
-}
+// .gv-standfirst {
+//   @include mq(leftCol) {
+//     min-height: 204px;
+//   }
+//   p {
+//     @include fs-headline(3);
+//     font-size: 17px;
+//     font-weight: 700;
+//     font-style: italic;
+//     padding-top: 6px;
+//     padding-bottom: 12px;
+//     max-width: 100%;
+//     color: white;
+//     position: absolute;
+//     margin-top: -140px;
+//     @include mq(mobileMedium) {
+//       @include fs-headline(3);
+//       font-weight: 700;
+//       margin-bottom: 18px;
+//       max-width: 320px;
+//       margin-top: -23vh;
+//     }
+//     @include mq(mobilePlus) {
+//     }
+//     @include mq(tablet) {
+//       padding-left: 0px;
+//       max-width: 420px;
+//       margin-top: -15vh;
+//     }
+//     @include mq(leftCol) {
+//       padding-bottom: 32px;
+//       font-size: 22px;
+//       line-height: 26px;
+//       max-width: 540px;
+//       margin-top: -20vh;
+//       &::before {
+//           content:'';
+//           border-left: 1px solid $neutral-86;
+//           display: block;
+//           position: absolute;
+//           top: 10px;
+//           left: -11px;
+//           height: 20vh;
+//       }
+//   }
+// }
+//
+// }
 
-}
-
-.android {
-  .gv-standfirst {
-    p {
-    margin-top: -196px;
-  }
-}
-}
+// .android {
+//   .gv-standfirst {
+//     p {
+//     margin-top: -196px;
+//   }
+// }
+// }
 
 .gv-byline, .gv-byline-bot {
   @include fs-headline(2);
@@ -103,15 +103,8 @@
     max-width: 620px;
     margin: 0 auto;
     position: relative;
-    margin-top: 10vh !important;
+    margin-top: 0px;
     z-index: 1;
-
-
-    @include mq(tablet) {
-      margin-top: 0vh !important;
-    }
-
-
 
 
 }

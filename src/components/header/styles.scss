@@ -13,8 +13,11 @@
 
 
 .gv-header-container {
-    height: 80vh;
+    height: 90vh;
     position: relative;
+    @include mq(tablet) {
+      height: 80vh;
+    }
 }
 
 .gv-header-image-container {
@@ -181,6 +184,51 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+    }
+
+    .gv-standfirst {
+      @include mq(leftCol) {
+        min-height: 100px;
+      }
+      position: absolute;
+      bottom: 0px;
+      z-index: 10;
+
+      p {
+        @include fs-headline(3);
+        font-size: 17px;
+        font-weight: 700;
+        font-style: italic;
+        padding-top: 6px;
+        max-width: 100%;
+        color: white;
+        @include mq(mobileMedium) {
+          @include fs-headline(3);
+          font-weight: 700;
+          max-width: 320px;
+        }
+        @include mq(mobilePlus) {
+        }
+        @include mq(tablet) {
+          padding-left: 0px;
+          max-width: 420px;
+        }
+        @include mq(leftCol) {
+          font-size: 22px;
+          line-height: 26px;
+          max-width: 540px;
+          &::before {
+              content:'';
+              border-left: 1px solid $neutral-86;
+              display: block;
+              position: absolute;
+              top: 10px;
+              left: -11px;
+              height: 400px;
+          }
+      }
+    }
+
     }
 
 
