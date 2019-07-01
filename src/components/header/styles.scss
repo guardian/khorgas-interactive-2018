@@ -208,7 +208,7 @@
         color: white;
         @include mq(mobileMedium) {
           @include fs-headline(3);
-          font-weight: 700;
+          font-weight: 600;
           max-width: 320px;
         }
         @include mq(mobilePlus) {
