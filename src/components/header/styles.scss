@@ -206,6 +206,7 @@
         padding-top: 6px;
         max-width: 100%;
         color: white;
+        padding-bottom: 0px;
         @include mq(mobileMedium) {
           @include fs-headline(3);
           font-weight: 600;
