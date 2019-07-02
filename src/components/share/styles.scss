@@ -64,19 +64,23 @@
 
 // Left col extra line - this is hacky
 .gv-byline-bot {
+  border-top: 1px solid $neutral-86;
+  // position: relative;
+  margin-top: 24px !important;
+  padding-top: 6px;
   @include mq(leftCol) {
     &::before {
         content:'';
         border-left: 1px solid $neutral-86;
         display: block;
         position: absolute;
-        top: -500px;
+        top: -600px;
         left: 169px;
-        height: 560px;
+        height: 706px;
     }
     @include mq(wide) {
       &::before {
-        left: 250px;
+        left: 249px;
       }
     }
 
