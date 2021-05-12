@@ -57,7 +57,7 @@
     "require-uncached": "^1.0.3",
     "resolve-from": "^4.0.0",
     "siema": "^1.5.1",
-    "swiper": "^4.3.3",
+    "swiper": "^6.5.1",
     "uglify": "^0.1.5",
     "unfetch": "^3.0.0"
   }
